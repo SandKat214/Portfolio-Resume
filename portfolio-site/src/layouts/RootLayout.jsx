@@ -1,9 +1,33 @@
 import { VStack } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+// Components
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
 const RootLayout = () => {
+
+    const [isLrgScreen, setLargeScreen] = useState(false);
+
+    const handleResize = () => {
+        if (window.innerWidth < 768) {
+            setLargeScreen(false);
+        } else {
+            setLargeScreen(true)
+        };
+    };
+  
+    useEffect(() => {
+        handleResize();
+        window.addEventListener('resize', handleResize);
+  
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <VStack w="100vw" minH="100vh" align='center'>
             <VStack 
@@ -11,12 +35,12 @@ const RootLayout = () => {
                 maxW='1300px' 
                 justify='space-between' 
                 align='center' 
-                spacing='50px'
+                spacing='70px'
                 flex={['unset', '1']}
                 p='30px 40px'
             >
-                <Navbar />
-                <Outlet />
+                <Navbar isLrgScreen={isLrgScreen} />
+                <Outlet context={isLrgScreen} />
                 <Footer />
             </VStack>
         </VStack>

@@ -1,29 +1,11 @@
 import { Button, Center, Heading, HStack, VStack } from "@chakra-ui/react";
-import { Link as RRLink } from "react-router-dom";
+import { Link as RRLink, useOutletContext } from "react-router-dom";
 import Socials from "../components/Socials";
-import { useEffect, useState } from "react";
 
 const Home = () => {
-    const [largeScreen, setLargeScreen] = useState(false);
 
-    const handleResize = () => {
-        if (window.innerWidth < 768) {
-            setLargeScreen(false);
-        } else {
-            setLargeScreen(true)
-        };
-    };
-
-    useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-
+    const isLrgScreen = useOutletContext();
+    
     return (
         <Center maxW='fit-content' flex='1'>
             <VStack spacing='30px' textAlign='center'>
@@ -41,7 +23,7 @@ const Home = () => {
                     <Button as={RRLink} to='/contact' variant='pinkLight'>
                         Contact Me!
                     </Button>
-                    {largeScreen && <Socials gap='35px'/>}
+                    {isLrgScreen && <Socials gap='35px'/>}
                 </HStack>
             </VStack>
         </Center>

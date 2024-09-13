@@ -51,6 +51,19 @@ const theme = extendTheme({
             },
         },
 
+        Drawer: {
+            parts: ['dialog'],
+            variants: {
+                primary: {
+                    dialog: {
+                        maxW: 'fit-content',
+                        bg: 'background',
+                    borderRight: '1px solid #00DBB4'
+                    },
+                },
+            },
+        },
+
         Heading: {
             variants: {
                 'halo': {
