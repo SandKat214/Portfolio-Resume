@@ -51,6 +51,16 @@ const theme = extendTheme({
             },
         },
 
+        Container: {
+            variants: {
+                'greenHalo': {
+                    maxW: '100%',
+                    borderRadius: '30px',
+                    boxShadow: '0 0 40px #00DBB4',
+                },
+            },
+        },
+
         Drawer: {
             parts: ['dialog'],
             variants: {

@@ -33,7 +33,8 @@ const Navbar = ({ isLrgScreen }) => {
                     <CustomLink path="/resume" label="Resume" />
                     <CustomLink path="/projects" label="Projects" />
                     <CustomLink path="/contact" label="Contact" />
-                </Flex> :
+                </Flex> 
+            :
                 <>
                     <IconButton 
                         aria-label="nav menu" 

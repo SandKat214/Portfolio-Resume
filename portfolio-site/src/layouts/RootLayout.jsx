@@ -36,11 +36,11 @@ const RootLayout = () => {
                 justify='space-between' 
                 align='center' 
                 spacing='70px'
-                flex={['unset', '1']}
+                flex={['unset', 1]}
                 p='30px 40px'
             >
                 <Navbar isLrgScreen={isLrgScreen} />
-                <Outlet context={isLrgScreen} />
+                <Outlet context={isLrgScreen} flex='1'/>
                 <Footer />
             </VStack>
         </VStack>
