@@ -37,7 +37,7 @@ const RootLayout = () => {
                 align='center' 
                 spacing='70px'
                 flex={['unset', 1]}
-                p='30px 40px'
+                p='40px'
             >
                 <Navbar isLrgScreen={isLrgScreen} />
                 <Outlet context={isLrgScreen} flex='1'/>

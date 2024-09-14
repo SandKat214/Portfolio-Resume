@@ -1,5 +1,7 @@
 import { Button, Center, Heading, HStack, VStack } from "@chakra-ui/react";
 import { Link as RRLink, useOutletContext } from "react-router-dom";
+
+// Components
 import Socials from "../components/Socials";
 
 const Home = () => {
@@ -12,7 +14,7 @@ const Home = () => {
                 <Heading as='h1' variant='halo' textTransform='capitalize'>
                     Katherine Sandeen
                 </Heading>
-                <Heading variant='gradient' size='xl'>
+                <Heading variant='gradient' textTransform='uppercase' size='xl'>
                     &#123; student, programmer, developer &#125;
                 </Heading>
                 <Heading as='h3' fontWeight='100' size='md' textAlign='left'>

@@ -36,12 +36,13 @@ const theme = extendTheme({
         Button: {
             variants: {
                 'pinkLight': {
-                    borderRadius: '23px',
+                    borderRadius: '40px',
+                    h: 'fit-content',
                     fontWeight: 'bold',
                     bg: 'foreground',
                     color: 'background',
-                    px: '22px',
-                    py: '10px',
+                    px: '25px',
+                    py: '15px',
                     boxShadow: '0 0 6px #D253FF',
                     _hover: {
                         bg: 'secondary.100',
@@ -85,7 +86,7 @@ const theme = extendTheme({
                 },
                 'gradient': {
                     fontWeight: 'bold',
-                    textTransform: 'uppercase',
+                    textTransform: 'lowercase',
                     bgGradient: 'linear(to-r, #00DBB4, #D253FF)',
                     bgClip: 'text',
                 },
@@ -110,7 +111,7 @@ const theme = extendTheme({
         Link: {
             variants: {
                 'global': {
-                    borderRadius: '23px',
+                    borderRadius: '40px',
                     fontWeight: 'bold',
                     color: 'primary.100',
                     textAlign: 'center',
@@ -134,6 +135,64 @@ const theme = extendTheme({
                 },
             },
         },
+
+        Menu: {
+            parts: ['button', 'divider', 'groupTitle', 'item', 'list'],
+            variants: {
+                local: {
+                    button: {
+                        color: 'secondary.100',
+                        fontSize: '1.2em',
+                        px: '20px',
+                        py: '10px',
+                        borderRadius: '100px',
+                        border: '1px solid #D253FF',
+                        _hover: {
+                            bg: 'secondary.100',
+                            color: 'background',
+                            boxShadow: '0 0 20px 3px #D253FF',
+                        },
+                        _active: {
+                            bg: 'secondary.100',
+                            color: 'background',
+                            boxShadow: '0 0 20px 3px #D253FF',
+                        },
+                    },
+                    divider: {
+                        borderColor: 'secondary.100',
+                    },
+                    item: {
+                        bg: 'background',
+                        color: 'foreground',
+                        justifyContent: 'center',
+                        _hover: {
+                            color: 'primary.100',
+                            fontStyle: 'italic',
+                            textShadow: '0 0 5px #00DBB4'
+                        },
+                        _focus: {
+                            color: 'primary.100',
+                            fontStyle: 'italic',
+                            textShadow: '0 0 5px #00DBB4'
+                        },
+                        _active: {
+                            color: 'primary.100',
+                            fontStyle: 'italic',
+                            textShadow: '0 0 5px #00DBB4'
+                        },
+                    },
+                    list: {
+                        p: '15px',
+                        bg: 'background',
+                        borderColor: 'secondary.100',
+                        minW: 'none',
+                        maxW: 'fit-content',
+
+                    }
+                    
+                }
+            }
+        }
     },
 })
 

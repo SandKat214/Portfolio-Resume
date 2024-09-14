@@ -11,7 +11,8 @@ import {
     useDisclosure, 
     VStack } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
-import { SlMenu } from "react-icons/sl";
+import { HamburgerIcon } from '@chakra-ui/icons';
+
 
 
 const CustomLink = ({ path, label }) => {
@@ -24,9 +25,9 @@ const CustomLink = ({ path, label }) => {
 
 const Navbar = ({ isLrgScreen }) => { 
     const { isOpen, onOpen, onClose } = useDisclosure();
-    
+
     return (
-        <HStack w='100%' justify='space-between' align='flex-start' gap='20px'>
+        <HStack w='100%' justify='space-between' align='flex-start' gap='30px'>
             {isLrgScreen ?
                 <Flex as='nav' gap="20px" justify='flex-start'>
                     <CustomLink path="/" label="Home" />
@@ -38,7 +39,7 @@ const Navbar = ({ isLrgScreen }) => {
                 <>
                     <IconButton 
                         aria-label="nav menu" 
-                        icon={<SlMenu />} 
+                        icon={<HamburgerIcon />} 
                         onClick={onOpen}
                         bg='background'
                         color='primary.100'
@@ -68,7 +69,7 @@ const Navbar = ({ isLrgScreen }) => {
                     </Drawer>
                 </>
             }   
-            <Image boxSize="45px" src="/public/Favicon.svg" />
+            <Image boxSize="45px" src="/Avatar.svg" />
         </HStack>        
     )
 }

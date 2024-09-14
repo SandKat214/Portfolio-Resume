@@ -5,7 +5,7 @@ import Socials from './Socials';
 const Footer = () => {
     return (
         <HStack as='footer' w='100%' justify={['center', 'flex-end']} align='center'>
-            <Socials gap='40px' />
+            <Socials gap='70px' />
         </HStack>
     )
 }
