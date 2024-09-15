@@ -14,8 +14,8 @@ const Education = ({ items }) => {
     const stackItems = items.map((item, index) => {
         return(
             <VStack key={index}>
-                <VStack align='center' gap='15px' pb='30px'>
-                    <VStack gap='10px' textAlign='center'>
+                <VStack align='center' gap='20px' pb='30px'>
+                    <VStack gap='15px' textAlign='center'>
                         <Heading as='h2' color='foreground' size='md'>
                             {item.school}
                         </Heading>
@@ -23,7 +23,14 @@ const Education = ({ items }) => {
                             {item.degree}
                         </Heading>
                     </VStack>
-                    <Flex direction={['column', 'row']} fontSize='14px' fontStyle='italic' fontWeight='100' gap={['15px', '40px']} align='flex-start'>
+                    <Flex 
+                        direction={['column', 'row']} 
+                        fontSize='14px' 
+                        fontStyle='italic' 
+                        fontWeight='100' 
+                        gap={['15px', '40px']} 
+                        align='flex-start'
+                    >
                         <VStack justify={['center']} align={['center', 'flex-end']} textAlign={['center', 'right']}>
                             <Text>
                                 <Text as='span' fontStyle='normal' fontWeight='bold'>Date:</Text>    
@@ -53,11 +60,10 @@ const Education = ({ items }) => {
 
     return (
         <VStack 
-            minChildWidth='fit-content'
-            px='60px' 
+            px={['15px', '60px']} 
             spacing='40px' 
             overflowY='auto'
-            scrollBarColor='secondary.100'
+            maxW='650px'
         >
             {stackItems}
         </VStack>

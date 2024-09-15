@@ -53,7 +53,7 @@ export const resume = {
         new Education(
             'Oregon State University',
             'Computer Science Bachelor of Science',
-            'Expected Fall 2025',
+            'Fall 2025 Expected',
             '4.0 current',
             [
                 'Algorithms',

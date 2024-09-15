@@ -32,10 +32,10 @@ const theme = extendTheme({
                 width: '3px',
             },
             '::-webkit-scrollbar-track': {
-                background: 'secondary.900',
+                background: 'primary.100',
             },
             '::-webkit-scrollbar-thumb': {
-                bgColor: 'secondary.100',
+                bgColor: 'secondary.900',
             },
         },
     },
@@ -113,6 +113,20 @@ const theme = extendTheme({
                         transform: 'scale(0.96)',
                     },
                 },
+                'skillLink': {
+                    color: 'secondary.100',
+                    p: '4px',
+                    borderRadius: '4px',
+                    boxSize: '40px',
+                    _hover: {
+                        color: 'background',
+                        bg: 'primary.100',
+                        boxShadow: '0 0 20px #00DBB4',
+                    },
+                    _active: {
+                        transform: 'scale(0.96)',
+                    },
+                }
             },
         },
 

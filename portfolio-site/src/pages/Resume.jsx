@@ -34,8 +34,8 @@ const Resume = () => {
             >
                 <LocalNav page={resume} setRoute={setSection} isLrgScreen={isLrgScreen} />
                 {(section === resume.education) && <Education items={resume.education} />}
-                {(section === resume.experience) && <Experience />}
-                {(section === resume.skills) && <Skills />}
+                {(section === resume.experience) && <Experience items={resume.experience} />}
+                {(section === resume.skills) && <Skills items={resume.skills} />}
             </VStack>
         </Container>
     )
