@@ -29,7 +29,8 @@ const LocalNav = ({ page, setRoute, isLrgScreen }) => {
 
     return (
         <Flex w='100%' direction={['column-reverse', 'row']} justify='space-between' align='center' gap='20px'>
-            <Heading 
+            <Heading
+                as='h1' 
                 variant='gradient'  
                 fontSize='1.8em'
             >

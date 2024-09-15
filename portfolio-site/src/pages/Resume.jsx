@@ -20,21 +20,23 @@ const Resume = () => {
             as='main' 
             variant='greenHalo' 
             w={["100%", null, "90%"]} 
-            flex={[1]}
-            p='30px 60px'
+            minHeight='60vh'
+            maxHeight={['unset', 'unset', '60vh']}
+            px='60px'
+            overflow='hidden'
         >
             <VStack
-                w='100%'
+                minHeight='60vh'
+                maxHeight={['unset', 'unset', '60vh']}
+                py='30px'
                 maxW='100%'
-                justify='space-between'
-                align='center'
+                gap='30px'
             >
                 <LocalNav page={resume} setRoute={setSection} isLrgScreen={isLrgScreen} />
-                {(section === resume.education) && <Education />}
+                {(section === resume.education) && <Education items={resume.education} />}
                 {(section === resume.experience) && <Experience />}
                 {(section === resume.skills) && <Skills />}
             </VStack>
-
         </Container>
     )
 }

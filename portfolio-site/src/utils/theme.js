@@ -28,7 +28,15 @@ const theme = extendTheme({
                 backgroundColor: 'background',
                 color: 'foreground',
             },
-
+            '::-webkit-scrollbar': {
+                width: '3px',
+            },
+            '::-webkit-scrollbar-track': {
+                background: 'secondary.900',
+            },
+            '::-webkit-scrollbar-thumb': {
+                bgColor: 'secondary.100',
+            },
         },
     },
 
@@ -142,7 +150,6 @@ const theme = extendTheme({
                 local: {
                     button: {
                         color: 'secondary.100',
-                        fontSize: '1.2em',
                         px: '20px',
                         py: '10px',
                         borderRadius: '100px',

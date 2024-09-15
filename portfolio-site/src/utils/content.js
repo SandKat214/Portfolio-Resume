@@ -62,9 +62,8 @@ export const resume = {
                 'Discrete Math',
                 'Intro to Databases',
                 'Web Development',
-
             ]
-        )
+        ),
     ],
 
     experience: [
