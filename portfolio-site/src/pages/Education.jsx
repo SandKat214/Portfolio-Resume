@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { 
     Divider, 
@@ -8,24 +9,32 @@ import {
     UnorderedList, 
     VStack 
 } from "@chakra-ui/react";
+import { useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 
 const Education = ({ items }) => {
+
+    const { setHeading }= useOutletContext();
+
+    useEffect(() => {
+        setHeading('education');
+    }, [])
 
     const stackItems = items.map((item, index) => {
         return(
             <VStack key={index}>
                 <VStack align='center' gap='20px' pb='30px'>
                     <VStack gap='15px' textAlign='center'>
-                        <Heading as='h2' color='foreground' size='md'>
+                        <Heading as='h2' color='foreground' size='sm'>
                             {item.school}
                         </Heading>
-                        <Heading as='h3' size='md' variant='halo'>
+                        <Heading as='h3' size='sm' variant='pinkHalo'>
                             {item.degree}
                         </Heading>
                     </VStack>
                     <Flex 
                         direction={['column', 'row']} 
-                        fontSize='14px' 
+                        fontSize='13px' 
                         fontStyle='italic' 
                         fontWeight='100' 
                         gap={['15px', '40px']} 
@@ -60,7 +69,9 @@ const Education = ({ items }) => {
 
     return (
         <VStack 
-            px={['15px', '60px']} 
+            px={['15px', '60px']}
+            py='20px'
+            w='100%'    
             spacing='40px' 
             overflowY='auto'
             maxW='650px'

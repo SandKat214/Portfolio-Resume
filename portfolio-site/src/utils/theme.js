@@ -29,6 +29,7 @@ const theme = extendTheme({
                 color: 'foreground',
             },
             '::-webkit-scrollbar': {
+                height: '3px',
                 width: '3px',
             },
             '::-webkit-scrollbar-track': {
@@ -43,16 +44,17 @@ const theme = extendTheme({
     components: {
         Button: {
             variants: {
-                'pinkLight': {
+                pinkLight: {
                     borderRadius: '40px',
                     h: 'fit-content',
-                    fontWeight: 'bold',
+                    fontWeight: '900',
                     bg: 'foreground',
-                    color: 'background',
+                    color: 'secondary.900',
                     px: '25px',
                     py: '15px',
                     boxShadow: '0 0 6px #D253FF',
                     _hover: {
+                        color: 'background',
                         bg: 'secondary.100',
                         boxShadow: '0 0 10px 5px #D253FF',
                     },
@@ -62,7 +64,7 @@ const theme = extendTheme({
 
         Container: {
             variants: {
-                'greenHalo': {
+                greenHalo: {
                     maxW: '100%',
                     borderRadius: '30px',
                     boxShadow: '0 0 40px #00DBB4',
@@ -85,16 +87,16 @@ const theme = extendTheme({
 
         Heading: {
             variants: {
-                'halo': {
+                pinkHalo: {
                     color: 'foreground',
                     textTransform: 'uppercase',
                     fontStyle: 'italic',
                     fontWeight: 'bold',
                     textShadow: '0 0 10px #D253FF'
                 },
-                'gradient': {
+                gradient: {
                     fontWeight: 'bold',
-                    textTransform: 'lowercase',
+                    // textTransform: 'lowercase',
                     bgGradient: 'linear(to-r, #00DBB4, #D253FF)',
                     bgClip: 'text',
                 },
@@ -103,7 +105,7 @@ const theme = extendTheme({
 
         Icon: {
             variants: {
-                'externalLink': {
+                externalLink: {
                     color: 'secondary.100',
                     boxSize: '35px',
                     _hover: {
@@ -113,7 +115,7 @@ const theme = extendTheme({
                         transform: 'scale(0.96)',
                     },
                 },
-                'skillLink': {
+                skillLink: {
                     color: 'secondary.100',
                     p: '4px',
                     borderRadius: '4px',
@@ -132,7 +134,7 @@ const theme = extendTheme({
 
         Link: {
             variants: {
-                'global': {
+                global: {
                     borderRadius: '40px',
                     fontWeight: 'bold',
                     color: 'primary.100',
@@ -185,35 +187,49 @@ const theme = extendTheme({
                     item: {
                         bg: 'background',
                         color: 'foreground',
-                        justifyContent: 'center',
+                        // justifyContent: 'center',
+                        textTransform: 'capitalize',
                         _hover: {
                             color: 'primary.100',
                             fontStyle: 'italic',
-                            textShadow: '0 0 5px #00DBB4'
+                            textShadow: '0 0 5px #00DBB4',
+                            textDecoration: 'none',
                         },
                         _focus: {
                             color: 'primary.100',
                             fontStyle: 'italic',
                             textShadow: '0 0 5px #00DBB4'
                         },
-                        _active: {
+                        _activeLink: {
                             color: 'primary.100',
                             fontStyle: 'italic',
                             textShadow: '0 0 5px #00DBB4'
                         },
                     },
                     list: {
-                        p: '15px',
+                        p: '10px',
                         bg: 'background',
                         borderColor: 'secondary.100',
                         minW: 'none',
                         maxW: 'fit-content',
+                        maxH: '250px',
+                        overflowY: 'auto',
 
                     }
                     
                 }
             }
-        }
+        },
+        Tooltip: {
+            variants: {
+                skillTip: {
+                    bg: 'background',
+                    color: 'primary.100',
+                    fontSize: 'xs',
+                    border: '1px solid #00DBB4',
+                },
+            },
+        },
     },
 })
 

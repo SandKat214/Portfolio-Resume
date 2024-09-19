@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { 
     Divider,  
@@ -7,23 +8,27 @@ import {
     UnorderedList, 
     VStack 
 } from "@chakra-ui/react";
+import { useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 
 const Experience = ({ items }) => {
+
+    const { setHeading } = useOutletContext();
 
     const stackItems = items.map((item, index) => {
         return(
             <VStack key={index} >
                 <VStack align='center' gap='20px' pb='30px'>
                     <VStack gap='15px' textAlign='center'>
-                        <Heading as='h2' size='md' variant='halo'>
+                        <Heading as='h2' size='sm' variant='pinkHalo'>
                             {item.title}
                         </Heading>
-                        <Heading as='h3' size='md'>
+                        <Heading as='h3' size='sm'>
                             {item.company}
                         </Heading>
                     </VStack>
                     <VStack  
-                        fontSize='14px' 
+                        fontSize='13px' 
                         fontStyle='italic' 
                         fontWeight='100' 
                         gap='20px'
@@ -46,9 +51,15 @@ const Experience = ({ items }) => {
         )
     })
 
+    useEffect(() => {
+        setHeading('experience');
+    }, [])
+
     return (
         <VStack 
-            px={['15px', '60px']} 
+            px={['15px', '60px']}
+            py='20px' 
+            w='100%'   
             spacing='40px' 
             overflowY='auto'
             maxW='650px'

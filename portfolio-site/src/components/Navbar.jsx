@@ -7,21 +7,15 @@ import {
     HStack, 
     IconButton, 
     Image, 
-    Link, 
     useDisclosure, 
     VStack } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+
+// Icons
 import { HamburgerIcon } from '@chakra-ui/icons';
 
+// Components
+import InternalLink from "./custom-links/InteralLink";
 
-
-const CustomLink = ({ path, label }) => {
-    return (
-        <Link as={NavLink} to={path} variant='global'>
-            {label}
-        </Link>
-    )
-}
 
 const Navbar = ({ isLrgScreen }) => { 
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,10 +24,10 @@ const Navbar = ({ isLrgScreen }) => {
         <HStack w='100%' justify='space-between' align='flex-start' gap='30px'>
             {isLrgScreen ?
                 <Flex as='nav' gap="20px" justify='flex-start'>
-                    <CustomLink path="/" label="Home" />
-                    <CustomLink path="/resume" label="Resume" />
-                    <CustomLink path="/projects" label="Projects" />
-                    <CustomLink path="/contact" label="Contact" />
+                    <InternalLink path="/" label="Home" />
+                    <InternalLink path="/resume" label="Resume" />
+                    <InternalLink path="/projects" label="Projects" />
+                    <InternalLink path="/contact" label="Contact" />
                 </Flex> 
             :
                 <>
@@ -60,10 +54,10 @@ const Navbar = ({ isLrgScreen }) => {
                         <DrawerOverlay />
                         <DrawerContent px='50px' py='90px' onClick={onClose} >
                             <VStack as='nav' spacing='40px' align='center'>
-                                <CustomLink path="/" label="Home" />
-                                <CustomLink path="/resume" label="Resume" />
-                                <CustomLink path="/projects" label="Projects" />
-                                <CustomLink path="/contact" label="Contact" />
+                                <InternalLink path="/" label="Home" />
+                                <InternalLink path="/resume" label="Resume" />
+                                <InternalLink path="/projects" label="Projects" />
+                                <InternalLink path="/contact" label="Contact" />
                             </VStack>
                         </DrawerContent>
                     </Drawer>
