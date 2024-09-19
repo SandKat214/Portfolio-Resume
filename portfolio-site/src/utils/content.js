@@ -47,8 +47,18 @@ class Skill {
     }
 }
 
+class Project {
+    constructor(title, desc, tech, gitHub, webLink) {
+        this.title = title;
+        this.desc = desc;
+        this.tech = tech;
+        this.gitHub = gitHub;
+        this.webLink = webLink;
+    }
+}
+
 export const resume = {
-    name: 'Resume',
+    name: 'resume',
     education: [
         new Education(
             'Oregon State University',
@@ -64,6 +74,19 @@ export const resume = {
                 'Web Development',
             ]
         ),
+        new Education(
+            'University of North Florida',
+            'Bachelor of Fine Arts',
+            'April 27, 2012',
+            '3.18',
+            [
+                '2-D Design',
+                '3-D Design',
+                'Drawing I & II',
+                'Photography',
+                'Basic Computer Images',
+            ]
+        ),
     ],
 
     experience: [
@@ -73,11 +96,23 @@ export const resume = {
             'April 2024',
             'Present',
             [
-                'Optimize learning for up to 400 students.',
-                'Mentor students on AVL trees, heaps, hash maps, etc.',
-                'Oversee class discussion boards to resolve inquiries.',
-                'Conduct open office hours for personalized support.',
-                'Evaluate stdent work, with focus on algorithmic efficiency.'
+                'Partner with professor to optimize learning for 400 students, demonstrating project management skills.',
+                'Mentor students on AVL trees, heaps, & hash maps, showcasing expertise on data structures.',
+                'Facilitate class discussion boards, addressing & resolving technical inquiries effectively.',
+                'Conduct office hours for personalized support on advanced topics, highlighting problem-solving skills.',
+                'Evaluate stdent work with focus on time complexity & algorithmic efficiency, emphasizing analytical skills.'
+            ]
+        ),
+        new Experience(
+            'Equipment Technician & Consultant',
+            "Georgie's Ceramic & Clay Co.",
+            'October 2016',
+            'Present',
+            [
+                'Analyze diagnostic data to troubleshoot & resolve equipment issues, applying problem-solving skills.',
+                "Design & facilitate monthly workshops on kiln firing systems, enhancing participants' technical confidence.",
+                'Utilize machine design knowledge to match equipment functionality with specific artist needs.',
+                'Collaborate with a diverse team of specialists to deliver a cohesive & positive client experience.'
             ]
         )
     ],
@@ -167,4 +202,79 @@ export const resume = {
             ),
         ]
     }
+}
+
+export const projects = {
+    name: 'projects',
+    resumePortfolio: new Project(
+        'KSandeen.com',
+        'A website portfolio to showcase my work and personality.',
+        [
+            'JavaScript',
+            'React',
+            'CSS',
+            'Vite',
+            'Chakra UI',
+            'Framer Motion'
+        ],
+        'https://github.com/SandKat214/Portfolio-Resume',
+        undefined
+    ),
+    ticTacToe: new Project(
+        'Tic-Tac-Toe User Interface',
+        'A simple game of Tic-Tac-Toe.',
+        [
+            'Python',
+            'Pygame'
+        ],
+        'https://github.com/SandKat214/Tic-Tac-Toe',
+        undefined
+    ),
+    ioProcedures: new Project(
+        'Using Low-Level I/O Procedures',
+        'A simple assembly language program that prompts the user for input, manipulates the data, and displays the results.',
+        [
+            'Assembly'
+        ],
+        'https://github.com/SandKat214/ioProcedures',
+        undefined
+    ),
+    webDevPortfolio: new Project(
+        'Web Development Portfolio',
+        'Portfolio single page application and MERN stack with a dynamic interface for performing CRUD operations on an art database.',
+        [
+            'JavaScript',
+            'HTML',
+            'CSS',
+            'React',
+            'Express.js',
+            'MongoDB'
+        ],
+        'https://github.com/SandKat214/WebDevPortfolio',
+        'https://sandeenk-webdev-portfolio.onrender.com/'
+    ),
+    chessGUI: new Project(
+        'Chess User Interface',
+        'A traditional game of chess with all the fixings. Pop-up messaging system delivers immediate feedback on moves & game.',
+        [
+            'Python',
+            'Pygame'
+        ],
+        'https://github.com/SandKat214/Chess',
+        'https://sandkat214.itch.io/chess'
+    ),
+    planetaryLiberators: new Project(
+        'Planetary Liberators',
+        'A recruitment application for the Helldivers II videogame. Utilizes a relational database backend to store user data, team managment, and relationship features. Developed via a collaborative team environment.',
+        [
+            'JavaScript',
+            'SQL',
+            'React',
+            'Express',
+            'MariaDB',
+            'Chakra UI'
+        ],
+        'https://github.com/SandKat214/PlanetaryLiberatorsDatabaseApp',
+        undefined
+    ),
 }
