@@ -48,12 +48,13 @@ class Skill {
 }
 
 class Project {
-    constructor(title, desc, tech, gitHub, webLink) {
+    constructor(title, desc, tech, gitHub, webLink, image) {
         this.title = title;
         this.desc = desc;
         this.tech = tech;
         this.gitHub = gitHub;
         this.webLink = webLink;
+        this.image = image;
     }
 }
 
@@ -218,40 +219,8 @@ export const projects = {
             'Framer Motion'
         ],
         'https://github.com/SandKat214/Portfolio-Resume',
-        undefined
-    ),
-    ticTacToe: new Project(
-        'Tic-Tac-Toe User Interface',
-        'A simple game of Tic-Tac-Toe.',
-        [
-            'Python',
-            'Pygame'
-        ],
-        'https://github.com/SandKat214/Tic-Tac-Toe',
-        undefined
-    ),
-    ioProcedures: new Project(
-        'Using Low-Level I/O Procedures',
-        'A simple assembly language program that prompts the user for input, manipulates the data, and displays the results.',
-        [
-            'Assembly'
-        ],
-        'https://github.com/SandKat214/ioProcedures',
-        undefined
-    ),
-    webDevPortfolio: new Project(
-        'Web Development Portfolio',
-        'Portfolio single page application and MERN stack with a dynamic interface for performing CRUD operations on an art database.',
-        [
-            'JavaScript',
-            'HTML',
-            'CSS',
-            'React',
-            'Express.js',
-            'MongoDB'
-        ],
-        'https://github.com/SandKat214/WebDevPortfolio',
-        'https://sandeenk-webdev-portfolio.onrender.com/'
+        undefined,
+        '/images/resumePortfolio.png'
     ),
     chessGUI: new Project(
         'Chess User Interface',
@@ -261,7 +230,18 @@ export const projects = {
             'Pygame'
         ],
         'https://github.com/SandKat214/Chess',
-        'https://sandkat214.itch.io/chess'
+        'https://sandkat214.itch.io/chess',
+        '/images/chessGUI.png'
+    ),
+    ioProcedures: new Project(
+        'Using Low-Level I/O Procedures',
+        'A simple assembly language program that prompts the user for input, manipulates the data, and displays the results.',
+        [
+            'Assembly'
+        ],
+        'https://github.com/SandKat214/ioProcedures',
+        undefined,
+        '/images/ioProcedures.png'
     ),
     planetaryLiberators: new Project(
         'Planetary Liberators',
@@ -275,6 +255,33 @@ export const projects = {
             'Chakra UI'
         ],
         'https://github.com/SandKat214/PlanetaryLiberatorsDatabaseApp',
-        undefined
+        undefined,
+        '/images/planetaryLiberators.png'
+    ),
+    ticTacToe: new Project(
+        'Tic-Tac-Toe User Interface',
+        'A simple game of Tic-Tac-Toe.',
+        [
+            'Python',
+            'Pygame'
+        ],
+        'https://github.com/SandKat214/Tic-Tac-Toe',
+        undefined,
+        '/images/ticTacToe.png'
+    ),
+    webDevPortfolio: new Project(
+        'Web Development Portfolio',
+        'Portfolio single page application and MERN stack with a dynamic interface for performing CRUD operations on an art database.',
+        [
+            'JavaScript',
+            'HTML',
+            'CSS',
+            'React',
+            'Express.js',
+            'MongoDB'
+        ],
+        'https://github.com/SandKat214/WebDevPortfolio',
+        'https://sandeenk-webdev-portfolio.onrender.com/',
+        '/images/webDevPortfolio.png'
     ),
 }

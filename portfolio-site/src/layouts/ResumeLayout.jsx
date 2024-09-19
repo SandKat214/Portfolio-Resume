@@ -17,14 +17,14 @@ const ResumeLayout = ({ resume }) => {
             as='main' 
             variant='greenHalo' 
             w={["100%", null, "90%"]} 
-            minHeight='60vh'
-            maxHeight={['unset', 'unset', '60vh']}
+            minHeight='67vh'
+            maxHeight={['unset', 'unset', '67vh']}
             px={['25px', '25px', '60px']}
             overflow='hidden'
         >
             <VStack
-                minHeight='60vh'
-                maxHeight={['unset', 'unset', '60vh']}
+                minHeight='67vh'
+                maxHeight={['unset', 'unset', '67vh']}
                 py='30px'
                 maxW='100%'
                 gap='20px'

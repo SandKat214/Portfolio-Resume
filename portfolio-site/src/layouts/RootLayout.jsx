@@ -35,7 +35,7 @@ const RootLayout = () => {
                 maxW='1300px' 
                 justify='space-between' 
                 align='center' 
-                spacing='70px'
+                spacing='50px'
                 flex={['unset', 1]}
                 p='40px'
             >

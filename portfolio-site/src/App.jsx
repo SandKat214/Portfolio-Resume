@@ -38,7 +38,7 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="projects" element={<ProjectsLayout projects={projects} />}>
-        <Route index element={<Projects />} />
+        <Route index element={<Projects projects={projects} />} />
         <Route path=":projKey" element={<Project />} />
       </Route>
 

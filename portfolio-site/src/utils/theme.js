@@ -62,6 +62,32 @@ const theme = extendTheme({
             },
         },
 
+        Card: {
+            parts: ['container', 'header', 'body', 'footer'],
+            variants: {
+                project: {
+                    container: {
+                        p: '0',
+                        bg: 'background',
+                        color: 'foreground',
+                        boxShadow: '0 0 10px #D253FF',
+                        // maxW: '200px',
+                    },
+                    header: {
+                        p: '0',
+                    },
+                    body: {
+                        p: '10px',
+                        borderTop: '1px solid #00DBB4'
+                    },
+                    footer: {
+                        p: '5px 20px 20px'
+                    }
+
+                }
+            }
+        },
+
         Container: {
             variants: {
                 greenHalo: {
@@ -220,6 +246,24 @@ const theme = extendTheme({
                 }
             }
         },
+
+        Popover: {
+            variants: {
+                project: {
+                    popper: {
+                        minWidth: 'unset !important',
+                        width: '0',
+                    },
+                    content: {
+                        fontSize: 'sm',
+                        maxW: 'fit-content',
+                        bg: 'background',
+                        color: 'primary.100',
+                    },
+                }
+            },
+        },
+
         Tooltip: {
             variants: {
                 skillTip: {

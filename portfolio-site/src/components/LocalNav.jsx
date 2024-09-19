@@ -19,6 +19,7 @@ import { GrDocumentPdf } from "react-icons/gr";
 
 const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
 
+    // Returns menu items from the keys in the resume object
     const menuItems = Object.keys(page).map((route, index) => {
         if (index > 0) {
             return(
@@ -48,6 +49,8 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
             >
                 &#123; {heading} &#125;
             </Heading>
+
+            {/** Only shows the menu on non-index pages */}
             {!isIndex &&
                 <Menu variant='local' autoSelect={false} >
                     <MenuButton textTransform='capitalize' >
@@ -63,6 +66,7 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
                                     href='/files/resume.pdf' 
                                     download='KSandeen-resume'
                                 >
+                                    {/** Only shows the pdf download on resume pages */}
                                     <Text>
                                         <Icon as={GrDocumentPdf} />
                                         {' '}Download
