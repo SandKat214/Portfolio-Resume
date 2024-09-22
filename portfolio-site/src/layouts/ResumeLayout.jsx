@@ -23,6 +23,7 @@ const ResumeLayout = ({ resume }) => {
             overflow='hidden'
         >
             <VStack
+                as='article'
                 minHeight='67vh'
                 maxHeight={['unset', 'unset', '67vh']}
                 py='30px'

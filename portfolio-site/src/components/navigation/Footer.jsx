@@ -10,7 +10,7 @@ import ExternalLink from '../custom-links/ExternalLink';
 const Footer = () => {
     return (
         <HStack as='footer' w='100%' justify={['center', 'flex-end']} align='center'>
-            <HStack spacing='70px'>
+            <HStack as='nav' spacing='70px'>
                 <ExternalLink
                     path='https://github.com/SandKat214' 
                     label={

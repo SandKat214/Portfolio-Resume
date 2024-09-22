@@ -21,6 +21,7 @@ const ProjectsLayout = ({ projects }) => {
             px={['25px', '25px', '60px']}
         >
             <VStack
+                as='article'
                 minHeight='67vh'
                 maxHeight={['unset', 'unset', 'unset', '67vh']}
                 py='30px'

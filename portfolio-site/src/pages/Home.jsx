@@ -19,8 +19,8 @@ const Home = () => {
     const isLrgScreen = useOutletContext();
     
     return (
-        <Center maxW='fit-content' flex='1'>
-            <VStack spacing='30px' textAlign='center'>
+        <Center as='section' maxW='fit-content' flex='1'>
+            <VStack as='hgroup' spacing='30px' textAlign='center'>
                 <Heading as='h1' variant='pinkHalo' textTransform='capitalize' size='3xl'>
                     Katherine Sandeen
                 </Heading>
@@ -31,7 +31,7 @@ const Home = () => {
                     An ambitious student of computer science and part-time science fiction nerd:<br/>
                     eager to boldly go and explore new horizons...
                 </Heading>
-                <HStack gap='60px' mt={['0', null, '30px']} justify='center'>
+                <HStack as='nav' gap='60px' mt={['0', null, '30px']} justify='center'>
                     <Button as={RRLink} to='/contact' variant='pinkLight'>
                         Contact Me!
                     </Button>

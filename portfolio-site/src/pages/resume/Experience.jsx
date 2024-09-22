@@ -17,8 +17,8 @@ const Experience = ({ items }) => {
 
     const stackItems = items.map((item, index) => {
         return(
-            <VStack key={index} align='center' gap='20px'>
-                <VStack gap='15px' textAlign='center'>
+            <VStack key={index} as='section' align='center' gap='20px'>
+                <VStack as='header' gap='15px' textAlign='center'>
                     <Heading as='h2' size='sm' variant='pinkHalo'>
                         {item.title}
                     </Heading>

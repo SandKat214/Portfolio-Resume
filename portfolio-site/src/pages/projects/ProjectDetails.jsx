@@ -21,6 +21,7 @@ const ProjectDetails = ({ projects }) => {
 
     return (
         <Flex 
+            as='section'
             direction={['column', 'column', 'column', 'row']} 
             w='100%'
             maxW='100%'
@@ -31,7 +32,11 @@ const ProjectDetails = ({ projects }) => {
             gap={['10px', '10px', '10px', '45px']}
             overflowY='auto'
         >
-            <VStack w={['100%', '100%', '100%', '40%']} spacing={['24px']} py={['20px', '20px', '20px', '60px']} >
+            <VStack 
+                w={['100%', '100%', '100%', '40%']} 
+                spacing={['24px']} 
+                py={['20px', '20px', '20px', '60px']} 
+            >
                 <Heading as='h2' variant='pinkHalo' size='sm' textAlign='center' >{projects[projKey].title}</Heading>
                 <Text fontSize='sm' fontWeight='200' textAlign='justify'>
                     {projects[projKey].desc}
@@ -44,7 +49,7 @@ const ProjectDetails = ({ projects }) => {
                             )
                         })}
                     </UnorderedList>
-                    <VStack>
+                    <VStack as='nav'>
                         <ExternalLink 
                             path={projects[projKey].gitHub} 
                             label={
@@ -72,6 +77,7 @@ const ProjectDetails = ({ projects }) => {
                 </HStack>
             </VStack>
             <Box 
+                as='figure'
                 w={['100%', '100%', '100%', '45%']} 
                 maxH='100%' 
                 py={['10px', '30px', '30px', '30px']} 
@@ -79,7 +85,7 @@ const ProjectDetails = ({ projects }) => {
             >
                 <Image 
                     src={projects[projKey].image} 
-                    alt='Chess User Interface'
+                    alt={projects[projKey].title}
                     maxH='100%'
                     maxW='100%'
                     float='right'

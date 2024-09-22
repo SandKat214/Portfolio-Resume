@@ -21,7 +21,7 @@ const Navbar = ({ isLrgScreen }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
-        <HStack w='100%' justify='space-between' align='flex-start' gap='30px'>
+        <HStack as='header' w='100%' justify='space-between' align='flex-start' gap='30px'>
             {isLrgScreen ?
                 <Flex as='nav' gap="20px" justify='flex-start'>
                     <InternalLink path="/" label="Home" />

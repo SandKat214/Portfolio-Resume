@@ -37,6 +37,7 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
 
     return (
         <Flex 
+            as='header'
             w='100%' 
             direction={['column-reverse', 'row']} 
             justify='space-between' 
@@ -64,11 +65,11 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
                         </Text>
                     </Text>
                 </VStack>) :
-                (<Menu variant='local' autoSelect={false} >
+                (<Menu as='menu' variant='local' autoSelect={false} >
                     <MenuButton textTransform='capitalize' >
                         <ChevronDownIcon />{isLrgScreen && page.name}
                     </MenuButton>
-                    <MenuList>
+                    <MenuList as='nav'>
                         {menuItems}
                         {page.name === 'resume' &&
                             <>

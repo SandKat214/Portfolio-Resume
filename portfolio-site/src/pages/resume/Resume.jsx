@@ -31,6 +31,7 @@ const Resume = () => {
             pb='20px'
         >
             <Flex 
+                as='nav'
                 width='100%' 
                 justify='center'
                 align={['stretch', 'center']}

@@ -22,8 +22,8 @@ const Education = ({ items }) => {
 
     const stackItems = items.map((item, index) => {
         return(
-            <VStack key={index} align='center' gap='20px'>
-                <VStack gap='15px' textAlign='center'>
+            <VStack as='section' key={index} align='center' gap='20px'>
+                <VStack as='header' gap='15px' textAlign='center'>
                     <Heading as='h2' color='foreground' size='sm'>
                         {item.school}
                     </Heading>

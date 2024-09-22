@@ -33,8 +33,8 @@ const Projects = ({ projects }) => {
     const gridItems = Object.keys(projects).map((route, index) => {
         if (index > 1) {
             return(
-                <Card key={route} variant='project'>
-                    <CardHeader>
+                <Card as='section' key={route} variant='project'>
+                    <CardHeader as='figure'>
                         <Image 
                             src={projects[route].image}
                             alt={`${projects[route].title} image`}
@@ -46,12 +46,12 @@ const Projects = ({ projects }) => {
 
                         />
                     </CardHeader>
-                    <CardBody>
-                        <Heading variant='pinkHalo' textTransform='none' size='xs'>
+                    <CardBody as='header'>
+                        <Heading as='h2' variant='pinkHalo' textTransform='none' size='xs'>
                             {projects[route].title}
                         </Heading>
                     </CardBody>
-                    <CardFooter>
+                    <CardFooter as='footer'>
                         <Flex w='100%' gap='20px' align='center' justify='space-between'>
                             <Popover
                                 trigger='hover'

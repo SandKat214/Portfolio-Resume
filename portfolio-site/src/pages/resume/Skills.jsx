@@ -54,27 +54,27 @@ const Skills = ({ items }) => {
             maxW='650px'
             align='flex-start'
         >
-            <VStack spacing='10px' align='flex-start'>
+            <VStack as='section' spacing='10px' align='flex-start'>
                 <Heading as='h2' size='sm' variant='pinkHalo'>Languages:</Heading>
-                <Flex gap={['15px', '20px', '40px']} wrap='wrap'>
+                <Flex as='nav' gap={['15px', '20px', '40px']} wrap='wrap'>
                     {sectionItems('languages')}
                 </Flex>
             </VStack>
-            <VStack spacing='10px' align='flex-start'>
+            <VStack as='section' spacing='10px' align='flex-start'>
                 <Heading as='h2' size='sm' variant='pinkHalo'>Libraries / Frameworks:</Heading>
-                <Flex gap={['15px', '20px', '40px']} wrap='wrap'>
+                <Flex as='nav' gap={['15px', '20px', '40px']} wrap='wrap'>
                     {sectionItems('libraries')}
                 </Flex>
             </VStack>
-            <VStack spacing='10px' align='flex-start'>
+            <VStack as='section' spacing='10px' align='flex-start'>
                 <Heading as='h2' size='sm' variant='pinkHalo'>Tools / Platforms:</Heading>
-                <Flex gap={['15px', '20px', '40px']} wrap='wrap'>
+                <Flex as='nav' gap={['15px', '20px', '40px']} wrap='wrap'>
                     {sectionItems('platforms')}
                 </Flex>
             </VStack>
-            <VStack spacing='10px' align='flex-start'>
+            <VStack as='section' spacing='10px' align='flex-start'>
                 <Heading as='h2' size='sm' variant='pinkHalo'>Databases:</Heading>
-                <Flex gap={['15px', '20px', '40px']} wrap='wrap'>
+                <Flex as='nav' gap={['15px', '20px', '40px']} wrap='wrap'>
                     {sectionItems('databases')}
                 </Flex>
             </VStack>
