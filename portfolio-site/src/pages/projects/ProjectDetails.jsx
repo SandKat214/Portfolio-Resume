@@ -21,16 +21,17 @@ const ProjectDetails = ({ projects }) => {
 
     return (
         <Flex 
-            direction={['column', 'row']} 
+            direction={['column', 'column', 'column', 'row']} 
             w='100%'
             maxW='100%'
             maxH='100%' 
-            justify={['center', 'space-evenly']} 
+            px={['0', '0', '15px']}
+            justify={['center', 'center', 'space-evenly']} 
             flex={1}
-            gap={['10px', '45px']}
+            gap={['10px', '10px', '10px', '45px']}
             overflowY='auto'
         >
-            <VStack w={['100%', '40%']} spacing='24px'py={['20px', '60px']} >
+            <VStack w={['100%', '100%', '100%', '40%']} spacing={['24px']} py={['20px', '20px', '20px', '60px']} >
                 <Heading as='h2' variant='pinkHalo' size='sm' textAlign='center' >{projects[projKey].title}</Heading>
                 <Text fontSize='sm' fontWeight='200' textAlign='justify'>
                     {projects[projKey].desc}
@@ -70,13 +71,17 @@ const ProjectDetails = ({ projects }) => {
                     </VStack>
                 </HStack>
             </VStack>
-            <Box w={['100%', '45%']} maxH='100%' py={['10px', '30px']} px={['10px', '0']}>
+            <Box 
+                w={['100%', '100%', '100%', '45%']} 
+                maxH='100%' 
+                py={['10px', '30px', '30px', '30px']} 
+                px={['10px', '30px', '30px', '0']}
+            >
                 <Image 
                     src={projects[projKey].image} 
                     alt='Chess User Interface'
                     maxH='100%'
                     maxW='100%'
-                    minH={['unset','350px']}
                     float='right'
                     borderRadius='10px'
                     boxShadow={['0 0 10px #D253FF', '0 0 30px #D253FF']}
