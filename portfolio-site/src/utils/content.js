@@ -60,6 +60,11 @@ class Project {
 
 export const resume = {
     name: 'resume',
+    quote: {
+        text: "Shouldn’t let go of being educated... Universe spent a lot of time telling you something... Maybe all those other things were getting you ready for this. Something.",
+        author: "James S.A. Corey",
+        cite: "Babylon's Ashes"
+    },
     education: [
         new Education(
             'Oregon State University',
@@ -207,7 +212,12 @@ export const resume = {
 
 export const projects = {
     name: 'projects',
-    resumePortfolio: new Project(
+    quote: {
+        text: "A process cannot be understood by stopping it. Understanding must move with the flow of the process, must join it and flow with it.",
+        author: "Frank Herbert",
+        cite: "Dune"
+    },
+    portfolio: new Project(
         'KSandeen.com',
         'A website portfolio to showcase my work and personality.',
         [
@@ -243,7 +253,7 @@ export const projects = {
         undefined,
         '/images/ioProcedures.png'
     ),
-    planetaryLiberators: new Project(
+    planetaryLibs: new Project(
         'Planetary Liberators',
         'A recruitment application for the Helldivers II videogame. Utilizes a relational database backend to store user data, team managment, and relationship features. Developed via a collaborative team environment.',
         [
@@ -269,7 +279,7 @@ export const projects = {
         undefined,
         '/images/ticTacToe.png'
     ),
-    webDevPortfolio: new Project(
+    webDevSite: new Project(
         'Web Development Portfolio',
         'Portfolio single page application and MERN stack with a dynamic interface for performing CRUD operations on an art database.',
         [
