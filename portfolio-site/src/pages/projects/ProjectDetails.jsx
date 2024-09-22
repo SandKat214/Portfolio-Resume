@@ -1,7 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Box, Flex, Heading, HStack, Icon, Image, ListItem, Text, UnorderedList, VStack } from "@chakra-ui/react";
-import { useOutletContext, useParams } from "react-router-dom";
+import { useLoaderData, useOutletContext, useParams } from "react-router-dom";
 import { useEffect } from "react";
+
+// Page Content
+import { projects } from "../../utils/content";
 
 // Icons
 import { ImGithub } from "react-icons/im";
@@ -10,9 +13,21 @@ import { LinkIcon } from "@chakra-ui/icons";
 // Components
 import ExternalLink from "../../components/custom-links/ExternalLink";
 
-const ProjectDetails = ({ projects }) => {
+// loader function
+export const ProjectDetailsLoader = ({ params }) => {
+    const { projKey } = params
+
+    const res = projects.sections[projKey]
+    if (res === undefined) {
+        throw Error('Could not find that project.')
+    }
+    return res
+}
+
+const ProjectDetails = () => {
 
     const { projKey } = useParams();
+    const project = useLoaderData();
     const { setHeading }= useOutletContext();
 
     useEffect(() => {
@@ -37,13 +52,13 @@ const ProjectDetails = ({ projects }) => {
                 spacing={['24px']} 
                 py={['20px', '20px', '20px', '60px']} 
             >
-                <Heading as='h2' variant='pinkHalo' size='sm' textAlign='center' >{projects[projKey].title}</Heading>
+                <Heading as='h2' variant='pinkHalo' size='sm' textAlign='center' >{project.title}</Heading>
                 <Text fontSize='sm' fontWeight='200' textAlign='justify'>
-                    {projects[projKey].desc}
+                    {project.desc}
                 </Text>
                 <HStack w='100%' align='flex-start' justify='space-around' spacing='25px'>
                     <UnorderedList fontSize='sm' fontWeight='100' fontStyle='italic' pt='5px'>
-                        {projects[projKey].tech.map((tech, index) => {
+                        {project.tech.map((tech, index) => {
                             return(
                                 <ListItem key={index}>{tech}</ListItem>
                             )
@@ -51,7 +66,7 @@ const ProjectDetails = ({ projects }) => {
                     </UnorderedList>
                     <VStack as='nav'>
                         <ExternalLink 
-                            path={projects[projKey].gitHub} 
+                            path={project.gitHub} 
                             label={
                                 <Icon 
                                     as={ImGithub} 
@@ -60,9 +75,9 @@ const ProjectDetails = ({ projects }) => {
                                 />
                             }
                         />
-                        {projects[projKey].webLink &&
+                        {project.webLink &&
                             <ExternalLink 
-                                path={projects[projKey].webLink} 
+                                path={project.webLink} 
                                 label={
                                     <Icon 
                                         as={LinkIcon} 
@@ -84,8 +99,8 @@ const ProjectDetails = ({ projects }) => {
                 px={['10px', '30px', '30px', '0']}
             >
                 <Image 
-                    src={projects[projKey].image} 
-                    alt={projects[projKey].title}
+                    src={project.image} 
+                    alt={project.title}
                     maxH='100%'
                     maxW='100%'
                     float='right'

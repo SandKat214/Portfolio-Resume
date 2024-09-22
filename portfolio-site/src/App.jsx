@@ -21,7 +21,7 @@ import Contact from './pages/Contact'
 import Education from './pages/resume/Education'
 import Experience from './pages/resume/Experience'
 import Skills from './pages/resume/Skills'
-import ProjectDetails from './pages/projects/ProjectDetails'
+import ProjectDetails, { ProjectDetailsLoader } from './pages/projects/ProjectDetails'
 
 
 const router = createBrowserRouter(
@@ -39,7 +39,11 @@ const router = createBrowserRouter(
 
       <Route path="projects" element={<ProjectsLayout projects={projects} />}>
         <Route index element={<Projects projects={projects.sections} />} />
-        <Route path=":projKey" element={<ProjectDetails projects={projects.sections} />} />
+        <Route 
+          path=":projKey"
+          element={<ProjectDetails projects={projects.sections} />}
+          loader={ProjectDetailsLoader}
+        />
       </Route>
 
       <Route path="contact" element={<Contact />} />
