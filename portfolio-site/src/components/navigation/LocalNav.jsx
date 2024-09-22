@@ -21,18 +21,16 @@ import { GrDocumentPdf } from "react-icons/gr";
 const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
 
     // Returns menu items from the keys in the resume object
-    const menuItems = Object.keys(page).map((route, index) => {
-        if (index > 1) {
-            return(
-                <MenuItem
-                    key={route}
-                    as={NavLink}
-                    to={`/${page.name}/${route}`}
-                >
-                    {route}
-                </MenuItem>
-            )
-        }
+    const menuItems = Object.keys(page.sections).map((route) => {
+        return(
+            <MenuItem
+                key={route}
+                as={NavLink}
+                to={route}
+            >
+                {route}
+            </MenuItem>
+        )
     })
 
     return (

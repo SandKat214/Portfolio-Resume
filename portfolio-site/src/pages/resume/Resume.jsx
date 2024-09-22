@@ -38,19 +38,19 @@ const Resume = () => {
                 gap={['20px', '60px']}
                 direction={['column', 'row']}
             >
-                <Button as={RRLink} to='/resume/education' variant='pinkLight'>
+                <Button as={RRLink} to='education' variant='pinkLight'>
                     <VStack>
                         <Icon as={IoSchoolSharp} boxSize={8}/>
                         {isLrgScreen && <Text>Education</Text>}
                     </VStack>
                 </Button>
-                <Button as={RRLink} to='/resume/experience' variant='pinkLight'>
+                <Button as={RRLink} to='experience' variant='pinkLight'>
                     <VStack>
                         <Icon as={MdWorkHistory} boxSize={8}/>
                         {isLrgScreen && <Text>Experience</Text>}
                     </VStack>
                 </Button>
-                <Button as={RRLink} to='/resume/skills' variant='pinkLight'>
+                <Button as={RRLink} to='skills' variant='pinkLight'>
                     <VStack>
                         <Icon as={FaTools} boxSize={8}/>
                         {isLrgScreen && <Text>Skills</Text>}

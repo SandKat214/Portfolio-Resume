@@ -32,14 +32,14 @@ const router = createBrowserRouter(
 
       <Route path="resume" element={<ResumeLayout resume={resume} />}>
         <Route index element={<Resume />} />
-        <Route path="education" element={<Education items={resume.education} />} />
-        <Route path="experience" element={<Experience items={resume.experience} />} />
-        <Route path="skills" element={<Skills items={resume.skills} />} />
+        <Route path="education" element={<Education items={resume.sections.education} />} />
+        <Route path="experience" element={<Experience items={resume.sections.experience} />} />
+        <Route path="skills" element={<Skills items={resume.sections.skills} />} />
       </Route>
 
       <Route path="projects" element={<ProjectsLayout projects={projects} />}>
-        <Route index element={<Projects projects={projects} />} />
-        <Route path=":projKey" element={<ProjectDetails projects={projects} />} />
+        <Route index element={<Projects projects={projects.sections} />} />
+        <Route path=":projKey" element={<ProjectDetails projects={projects.sections} />} />
       </Route>
 
       <Route path="contact" element={<Contact />} />
