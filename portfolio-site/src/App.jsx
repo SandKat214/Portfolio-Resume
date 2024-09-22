@@ -39,7 +39,7 @@ const router = createBrowserRouter(
 
       <Route path="projects" element={<ProjectsLayout projects={projects} />}>
         <Route index element={<Projects projects={projects} />} />
-        <Route path=":projKey" element={<ProjectDetails />} />
+        <Route path=":projKey" element={<ProjectDetails projects={projects} />} />
       </Route>
 
       <Route path="contact" element={<Contact />} />

@@ -226,7 +226,8 @@ export const projects = {
             'CSS',
             'Vite',
             'Chakra UI',
-            'Framer Motion'
+            'Framer Motion',
+            'Figma'
         ],
         'https://github.com/SandKat214/Portfolio-Resume',
         undefined,
