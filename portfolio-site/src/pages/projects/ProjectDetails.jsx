@@ -3,7 +3,7 @@ import { Box, Flex, Heading, HStack, Icon, Image, ListItem, Text, UnorderedList,
 import { useLoaderData, useOutletContext, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
-// Page Content
+// Utils
 import { projects } from "../../utils/content";
 
 // Icons
@@ -13,21 +13,22 @@ import { LinkIcon } from "@chakra-ui/icons";
 // Components
 import ExternalLink from "../../components/custom-links/ExternalLink";
 
+
 // loader function
 export const ProjectDetailsLoader = ({ params }) => {
     const { projKey } = params
 
     const res = projects.sections[projKey]
     if (res === undefined) {
-        throw Error('Could not find that project.')
+        throw Error('Project Not Found')
     }
     return res
 }
 
 const ProjectDetails = () => {
-
-    const { projKey } = useParams();
+    
     const project = useLoaderData();
+    const { projKey } = useParams();
     const { setHeading }= useOutletContext();
 
     useEffect(() => {

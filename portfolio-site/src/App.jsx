@@ -22,11 +22,16 @@ import Education from './pages/resume/Education'
 import Experience from './pages/resume/Experience'
 import Skills from './pages/resume/Skills'
 import ProjectDetails, { ProjectDetailsLoader } from './pages/projects/ProjectDetails'
+import Error from './pages/Error'
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route 
+      path="/" 
+      element={<RootLayout />}
+      errorElement={<Error />}
+    >
 
       <Route index element={<Home />} />
 
@@ -41,7 +46,7 @@ const router = createBrowserRouter(
         <Route index element={<Projects projects={projects.sections} />} />
         <Route 
           path=":projKey"
-          element={<ProjectDetails projects={projects.sections} />}
+          element={<ProjectDetails />}
           loader={ProjectDetailsLoader}
         />
       </Route>
