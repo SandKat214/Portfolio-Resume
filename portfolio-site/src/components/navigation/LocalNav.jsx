@@ -63,11 +63,11 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
                         </Text>
                     </Text>
                 </VStack>) :
-                (<Menu as='menu' variant='local' autoSelect={false} >
+                (<Menu variant='local' autoSelect={false} >
                     <MenuButton textTransform='capitalize' >
                         <ChevronDownIcon />{isLrgScreen && page.name}
                     </MenuButton>
-                    <MenuList as='nav'>
+                    <MenuList>
                         {menuItems}
                         {page.name === 'resume' &&
                             <>
