@@ -230,7 +230,7 @@ export const projects = {
         ],
         'https://github.com/SandKat214/Portfolio-Resume',
         undefined,
-        '/images/resumePortfolio.png'
+        '/images/portfolio.png'
     ),
     chessGUI: new Project(
         'Chess User Interface',
@@ -266,7 +266,7 @@ export const projects = {
         ],
         'https://github.com/SandKat214/PlanetaryLiberatorsDatabaseApp',
         undefined,
-        '/images/planetaryLiberators.png'
+        '/images/planetaryLibs.png'
     ),
     ticTacToe: new Project(
         'Tic-Tac-Toe User Interface',
@@ -292,6 +292,6 @@ export const projects = {
         ],
         'https://github.com/SandKat214/WebDevPortfolio',
         'https://sandeenk-webdev-portfolio.onrender.com/',
-        '/images/webDevPortfolio.png'
+        '/images/webDevSite.png'
     ),
 }
