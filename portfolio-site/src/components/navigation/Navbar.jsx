@@ -14,7 +14,7 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons';
 
 // Components
-import InternalLink from "./custom-links/InteralLink";
+import InternalLink from "../custom-links/InteralLink";
 
 
 const Navbar = ({ isLrgScreen }) => { 

@@ -5,7 +5,7 @@ import { useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
 
 // Components
-import ExternalLink from "../components/custom-links/ExternalLink";
+import ExternalLink from "../../components/custom-links/ExternalLink";
 
 
 const Skills = ({ items }) => {

@@ -9,7 +9,8 @@ import {
     MenuDivider, 
     MenuItem, 
     MenuList, 
-    Text 
+    Text,
+    VStack 
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
@@ -21,7 +22,7 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
 
     // Returns menu items from the keys in the resume object
     const menuItems = Object.keys(page).map((route, index) => {
-        if (index > 0) {
+        if (index > 1) {
             return(
                 <MenuItem
                     key={route}
@@ -39,7 +40,7 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
             w='100%' 
             direction={['column-reverse', 'row']} 
             justify='space-between' 
-            align='center' 
+            align={['center', 'flex-start']} 
             gap='20px'
         >
             <Heading
@@ -51,8 +52,19 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
             </Heading>
 
             {/** Only shows the menu on non-index pages */}
-            {!isIndex &&
-                <Menu variant='local' autoSelect={false} >
+            {isIndex ?
+                (<VStack as='blockquote' textAlign='center' fontSize='14px' w='70%'>
+                    <Text fontWeight='100' fontStyle='italic'>
+                        &quot;{page.quote.text}&quot;
+                    </Text>
+                    <Text>
+                        &mdash; {page.quote.author}, {" "}
+                        <Text as='cite'>
+                            {page.quote.cite}
+                        </Text>
+                    </Text>
+                </VStack>) :
+                (<Menu variant='local' autoSelect={false} >
                     <MenuButton textTransform='capitalize' >
                         <ChevronDownIcon />{isLrgScreen && page.name}
                     </MenuButton>
@@ -75,7 +87,7 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
                             </>
                         }
                     </MenuList>
-                </Menu>
+                </Menu>)
             }            
         </Flex>
     )

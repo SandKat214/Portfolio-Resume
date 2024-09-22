@@ -26,22 +26,10 @@ const Resume = () => {
             flex={['unset', 1]} 
             align='center' 
             w='100%'
-            justify='space-between'
+            justify='space-evenly'
             spacing='30px'
             pb='20px'
         >
-            <VStack as='blockquote' textAlign='center' fontSize='14px'>
-                <Text fontWeight='100' fontStyle='italic'>
-                    &quot;{"Shouldn’t let go of being educated... Universe spent a lot of time telling you something... Maybe all those other things were getting you ready for this. Something."}&quot;
-                </Text>
-                <Text>
-                    &mdash; James S.A. Corey, {" "}
-                    <Text as='cite'>
-                        {"Babylon's Ashes"}
-                    </Text>
-                </Text>
-            </VStack>
-
             <Flex 
                 width='100%' 
                 justify='center'

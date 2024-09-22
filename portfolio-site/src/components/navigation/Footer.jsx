@@ -4,7 +4,7 @@ import { HStack, Icon } from '@chakra-ui/react';
 import { ImGithub, ImLinkedin } from "react-icons/im";
 
 // Components
-import ExternalLink from './custom-links/ExternalLink';
+import ExternalLink from '../custom-links/ExternalLink';
 
 
 const Footer = () => {

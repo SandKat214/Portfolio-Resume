@@ -31,7 +31,7 @@ const Projects = ({ projects }) => {
     const { isLrgScreen, setHeading, setIsIndex } = useOutletContext();
 
     const gridItems = Object.keys(projects).map((route, index) => {
-        if (index > 0) {
+        if (index > 1) {
             return(
                 <Card key={route} variant='project'>
                     <CardHeader>
@@ -47,7 +47,7 @@ const Projects = ({ projects }) => {
                         />
                     </CardHeader>
                     <CardBody>
-                        <Heading variant='pinkHalo' textTransform='capitalize' size='xs'>
+                        <Heading variant='pinkHalo' textTransform='none' size='xs'>
                             {projects[route].title}
                         </Heading>
                     </CardBody>
@@ -110,21 +110,9 @@ const Projects = ({ projects }) => {
             w='100%'
             justify='space-between'
             spacing='30px'
-            pb='20px'
             overflow='hidden'
         >
-            <VStack as='blockquote' textAlign='center' fontSize='14px'>
-                <Text fontWeight='100' fontStyle='italic'>
-                    &quot;A process cannot be understood by stopping it. Understanding must move with the flow of the process, must join it and flow with it.&quot;
-                </Text>
-                <Text>
-                    &mdash; Frank Herbert, {" "}
-                    <Text as='cite'>
-                        Dune
-                    </Text>
-                </Text>
-            </VStack>
-            <SimpleGrid minChildWidth='200px' spacing='30px' w='100%' overflowY='auto' p='15px 25px'>
+            <SimpleGrid minChildWidth={['150px','200px']} spacing='30px' w='100%' overflowY='auto' p='15px 25px'>
                 {gridItems}
             </SimpleGrid>
         </VStack>
