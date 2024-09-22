@@ -10,8 +10,8 @@ const Error = () => {
     console.log(error);
 
     return (
-        <Center w="100vw" minH="100vh">
-            <VStack w='90%' maxW='800px' spacing='50px'>
+        <Center as='main' w="100vw" minH="100vh">
+            <VStack as='section' w='90%' maxW='800px' spacing='50px'>
                 <VStack as='hgroup' spacing='40px'>
                     <Heading as='h1' variant='gradient' textTransform='uppercase' size='2xl'>
                         &#123; error &#125;
