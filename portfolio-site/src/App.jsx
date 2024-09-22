@@ -15,13 +15,13 @@ import ProjectsLayout from './layouts/ProjectsLayout'
 
 // Pages
 import Home from './pages/Home'
-import Resume from './pages/Resume'
-import Projects from './pages/Projects'
+import Resume from './pages/resume/Resume'
+import Projects from './pages/projects/Projects'
 import Contact from './pages/Contact'
-import Education from './pages/Education'
-import Experience from './pages/Experience'
-import Skills from './pages/Skills'
-import Project from './pages/Project'
+import Education from './pages/resume/Education'
+import Experience from './pages/resume/Experience'
+import Skills from './pages/resume/Skills'
+import ProjectDetails from './pages/projects/ProjectDetails'
 
 
 const router = createBrowserRouter(
@@ -39,7 +39,7 @@ const router = createBrowserRouter(
 
       <Route path="projects" element={<ProjectsLayout projects={projects} />}>
         <Route index element={<Projects projects={projects} />} />
-        <Route path=":projKey" element={<Project />} />
+        <Route path=":projKey" element={<ProjectDetails />} />
       </Route>
 
       <Route path="contact" element={<Contact />} />

@@ -4,8 +4,7 @@ import { useState } from "react"
 import { Outlet, useOutletContext } from "react-router-dom"
 
 // Components
-import LocalNav from "../components/LocalNav"
-
+import LocalNav from "../components/navigation/LocalNav"
 
 const ProjectsLayout = ({ projects }) => {
     const isLrgScreen = useOutletContext();
@@ -26,7 +25,7 @@ const ProjectsLayout = ({ projects }) => {
                 maxHeight={['unset', 'unset', '67vh']}
                 py='30px'
                 maxW='100%'
-                gap='20px'
+                gap='30px'
             >
                 <LocalNav heading={heading} isIndex={isIndex} isLrgScreen={isLrgScreen} page={projects} />
                 <Outlet context={{isLrgScreen, setHeading, setIsIndex}} />

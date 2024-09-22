@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Outlet, useOutletContext } from "react-router-dom"
 
 // Components
-import LocalNav from "../components/LocalNav"
+import LocalNav from "../components/navigation/LocalNav"
 
 
 const ResumeLayout = ({ resume }) => {

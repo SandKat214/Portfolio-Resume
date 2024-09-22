@@ -3,8 +3,8 @@ import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Components
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/navigation/Navbar";
+import Footer from "../components/navigation/Footer";
 
 
 const RootLayout = () => {
@@ -12,7 +12,7 @@ const RootLayout = () => {
     const [isLrgScreen, setLargeScreen] = useState(false);
 
     const handleResize = () => {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 600) {
             setLargeScreen(false);
         } else {
             setLargeScreen(true)
