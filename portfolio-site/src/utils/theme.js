@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme, textDecoration } from "@chakra-ui/react"
 import "@fontsource-variable/jetbrains-mono"
 
 const theme = extendTheme({
@@ -61,7 +61,6 @@ const theme = extendTheme({
 		},
 
 		Card: {
-			parts: ["container", "header", "body", "footer"],
 			variants: {
 				project: {
 					container: {
@@ -96,7 +95,6 @@ const theme = extendTheme({
 		},
 
 		Drawer: {
-			parts: ["dialog"],
 			variants: {
 				primary: {
 					dialog: {
@@ -104,6 +102,16 @@ const theme = extendTheme({
 						bg: "background",
 						borderRight: "1px solid #00DBB4",
 					},
+				},
+			},
+		},
+
+		FormLabel: {
+			variants: {
+				contact: {
+					fontSize: "sm",
+					fontWeight: "100",
+					fontStyle: "italic",
 				},
 			},
 		},
@@ -155,6 +163,25 @@ const theme = extendTheme({
 			},
 		},
 
+		Input: {
+			variants: {
+				contact: {
+					field: {
+						bg: "background",
+						border: "1px solid #6F0395",
+						borderRadius: "20px",
+						_hover: {
+							border: "1px solid #6F0395",
+						},
+						_focus: {
+							border: "3px solid #00DBB4",
+						},
+					},
+					element: {},
+				},
+			},
+		},
+
 		Link: {
 			variants: {
 				global: {
@@ -180,11 +207,19 @@ const theme = extendTheme({
 						textShadow: "0px 0px 5px #D253FF",
 					},
 				},
+				contact: {
+					color: "secondary.100",
+					fontWeight: "200",
+					_hover: {
+						textDecoration: "none",
+						color: "primary.100",
+						fontStyle: "italic",
+					},
+				},
 			},
 		},
 
 		Menu: {
-			parts: ["button", "divider", "groupTitle", "item", "list"],
 			variants: {
 				local: {
 					button: {
@@ -254,6 +289,22 @@ const theme = extendTheme({
 						maxW: "fit-content",
 						bg: "background",
 						color: "primary.100",
+					},
+				},
+			},
+		},
+
+		Textarea: {
+			variants: {
+				contact: {
+					bg: "background",
+					border: "1px solid #6F0395",
+					borderRadius: "20px",
+					_hover: {
+						border: "1px solid #6F0395",
+					},
+					_focus: {
+						border: "3px solid #00DBB4",
 					},
 				},
 			},

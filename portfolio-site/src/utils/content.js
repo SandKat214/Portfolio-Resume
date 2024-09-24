@@ -221,3 +221,13 @@ export const projects = {
 		),
 	},
 }
+
+export const contact = {
+	name: "contact",
+	quote: {
+		text: "Communication is essential... Exchange information, learn to talk sensibly about any subject, learn to express your thoughts, accept new ones...",
+		author: "Anne McCaffrey",
+		cite: "The White Dragon",
+	},
+	sections: {},
+}

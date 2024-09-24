@@ -6,12 +6,13 @@ import {
 } from "react-router-dom"
 
 // Utils
-import { resume, projects } from "./utils/content"
+import { resume, projects, contact } from "./utils/content"
 
 // Layouts
 import RootLayout from "./layouts/RootLayout"
 import ResumeLayout from "./layouts/ResumeLayout"
 import ProjectsLayout from "./layouts/ProjectsLayout"
+import ContactLayout from "./layouts/ContactLayout"
 
 // Pages
 import Home from "./pages/Home"
@@ -62,7 +63,9 @@ const router = createBrowserRouter(
 				/>
 			</Route>
 
-			<Route path='contact' element={<Contact />} />
+			<Route path='contact' element={<ContactLayout contact={contact} />}>
+				<Route index element={<Contact />} />
+			</Route>
 		</Route>
 	)
 )
