@@ -20,6 +20,19 @@ import * as yup from "yup"
 // Icons
 import { RiSendPlaneFill } from "react-icons/ri"
 
+// Action function
+export const ContactAction = async ({ request }) => {
+	const data = await request.formData()
+	// const values = Object.fromEntries(data)
+	const values = {
+		name: data.get("name"),
+		email: data.get("email"),
+		subject: data.get("subject"),
+		message: data.get("message"),
+	}
+	console.log(values)
+}
+
 const Contact = () => {
 	const submit = useSubmit()
 
@@ -97,7 +110,7 @@ const Contact = () => {
 							>
 								{formik.touched.name && formik.errors.name
 									? formik.errors.name
-									: "Please enter your full name:"}
+									: "Enter your full name:"}
 							</FormHelperText>
 							<Input
 								type='text'
@@ -125,7 +138,7 @@ const Contact = () => {
 							>
 								{formik.touched.email && formik.errors.email
 									? formik.errors.email
-									: "Please enter your email:"}
+									: "Enter your email:"}
 							</FormHelperText>
 							<Input
 								type='email'
@@ -154,7 +167,7 @@ const Contact = () => {
 						>
 							{formik.touched.subject && formik.errors.subject
 								? formik.errors.subject
-								: "Please enter a subject line:"}
+								: "Enter a subject line:"}
 						</FormHelperText>
 						<Input
 							type='text'
@@ -182,7 +195,7 @@ const Contact = () => {
 						>
 							{formik.touched.message && formik.errors.message
 								? formik.errors.message
-								: "Please enter your message:"}
+								: "Enter your message:"}
 						</FormHelperText>
 						<Textarea
 							name='message'

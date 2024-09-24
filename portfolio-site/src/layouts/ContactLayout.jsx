@@ -48,7 +48,7 @@ const ContactLayout = ({ contact }) => {
 					isLrgScreen={isLrgScreen}
 					page={contact}
 				/>
-				<VStack w='100%' overflowY={['unset', 'auto']}>
+				<VStack w='100%' overflowY={["unset", "auto"]}>
 					<Flex
 						w='100%'
 						direction={["column", null, "row"]}
