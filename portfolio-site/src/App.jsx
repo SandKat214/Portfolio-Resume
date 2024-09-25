@@ -12,7 +12,6 @@ import { resume, projects, contact } from "./utils/content"
 import RootLayout from "./layouts/RootLayout"
 import ResumeLayout from "./layouts/ResumeLayout"
 import ProjectsLayout from "./layouts/ProjectsLayout"
-import ContactLayout from "./layouts/ContactLayout"
 
 // Pages
 import Home from "./pages/Home"
@@ -65,11 +64,9 @@ const router = createBrowserRouter(
 
 			<Route
 				path='contact'
-				element={<ContactLayout contact={contact} />}
+				element={<Contact contact={contact} />}
 				action={ContactAction}
-			>
-				<Route index element={<Contact />} />
-			</Route>
+			/>
 		</Route>
 	)
 )

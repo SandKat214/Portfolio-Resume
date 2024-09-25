@@ -99,10 +99,10 @@ const Projects = ({ projects }) => {
 							to={route}
 							variant='pinkLight'
 							p='5px 15px'
+							leftIcon={<ViewIcon boxSize={4} />}
 						>
 							<Text fontSize='xs' align='center'>
-								<ViewIcon boxSize={4} />
-								<Text as='span'> View</Text>
+								View
 							</Text>
 						</Button>
 					</Flex>
