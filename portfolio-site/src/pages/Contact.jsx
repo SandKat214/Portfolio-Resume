@@ -52,15 +52,17 @@ export const ContactAction = async ({ request }) => {
 			import.meta.env.VITE_TEMPLATE_ID,
 			values,
 			{
-				publicKey: import.meta.env.VITE_PUBLIC_KEY
+				publicKey: import.meta.env.VITE_PUBLIC_KEY,
 			}
 		)
 		console.log(`Status: ${res.status}, ${res.text}`)
-        return {text: "Email successfully submitted!", status: "success"}
-
+		return { text: "Email successfully submitted!", status: "success" }
 	} catch (error) {
-		console.log(error)
-		return {text: "Error occurred in email submission.", status: "error"}
+		console.error(error)
+		return {
+			text: "Something went wrong. Please try direct method.",
+			status: "error",
+		}
 	}
 }
 
@@ -106,11 +108,7 @@ const Contact = ({ contact }) => {
 
 	useEffect(() => {
 		if (data) {
-			toast({description: data.text, status: data.status})
-
-			if (data.status === 'error') {
-				formik.resetForm()
-			}
+			toast({ description: data.text, status: data.status })
 		}
 	}, [data])
 
@@ -219,14 +217,28 @@ const Contact = ({ contact }) => {
 							>
 								...or via form
 							</Heading>
-							{data && data.status === "success" ?
-								<VStack w="80%" gap={15} m='30px auto' textAlign='center' justify='center'> 
-									<Heading as='h3' size='sm' variant='pinkHalo'>Your message has been received!</Heading>
-									<Text fontWeight={100} fontStyle="italic">
-										Thank you for reaching out, {formik.values.name}, I will respond within 24 hours...
+							{data && data.status === "success" ? (
+								<VStack
+									w='80%'
+									gap={15}
+									m='30px auto'
+									textAlign='center'
+									justify='center'
+								>
+									<Heading
+										as='h3'
+										size='sm'
+										variant='pinkHalo'
+									>
+										Your message has been received!
+									</Heading>
+									<Text fontWeight={100} fontStyle='italic'>
+										Thank you for reaching out,{" "}
+										{formik.values.name}, I will respond
+										within 24 hours...
 									</Text>
-								</VStack> 
-								:
+								</VStack>
+							) : (
 								<Form onSubmit={formik.handleSubmit}>
 									<VStack spacing='8px'>
 										<Flex
@@ -269,7 +281,9 @@ const Contact = ({ contact }) => {
 													type='text'
 													name='name'
 													value={formik.values.name}
-													onChange={formik.handleChange}
+													onChange={
+														formik.handleChange
+													}
 													onBlur={formik.handleBlur}
 													minLength={2}
 													isRequired
@@ -301,7 +315,9 @@ const Contact = ({ contact }) => {
 													type='email'
 													name='email'
 													value={formik.values.email}
-													onChange={formik.handleChange}
+													onChange={
+														formik.handleChange
+													}
 													onBlur={formik.handleBlur}
 													isRequired
 													size='xs'
@@ -383,14 +399,17 @@ const Contact = ({ contact }) => {
 													boxSize={4}
 												/>
 											}
-											isLoading={navigation.state === "submitting"}
+											isLoading={
+												navigation.state ===
+												"submitting"
+											}
 											loadingText={"Sending..."}
 										>
 											<Text>Send</Text>
 										</Button>
 									</VStack>
 								</Form>
-							}
+							)}
 						</Container>
 					</Flex>
 				</VStack>
