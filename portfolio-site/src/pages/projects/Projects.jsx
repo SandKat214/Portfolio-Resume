@@ -27,8 +27,8 @@ import { useEffect } from "react"
 import { ViewIcon } from "@chakra-ui/icons"
 import { GrTechnology } from "react-icons/gr"
 
-const Projects = ({ projects }) => {
-	const { setHeading, setIsIndex } = useOutletContext()
+const Projects = () => {
+	const { projects, setHeading, setIsIndex } = useOutletContext()
 
 	const gridItems = Object.keys(projects).map((route) => {
 		return (

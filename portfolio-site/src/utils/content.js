@@ -46,17 +46,6 @@ class Skill {
 	}
 }
 
-class Project {
-	constructor(title, desc, tech, gitHub, webLink, image) {
-		this.title = title
-		this.desc = desc
-		this.tech = tech
-		this.gitHub = gitHub
-		this.webLink = webLink
-		this.image = image
-	}
-}
-
 export const resume = {
 	name: "resume",
 	quote: {
@@ -77,6 +66,8 @@ export const resume = {
 					"Data Structures",
 					"Discrete Math",
 					"Intro to Databases",
+					"Operating Systems",
+					"Software Engineering I",
 					"Web Development",
 				]
 			),
@@ -162,64 +153,7 @@ export const projects = {
 		author: "Frank Herbert",
 		cite: "Dune",
 	},
-	sections: {
-		portfolio: new Project(
-			"KSandeen.com",
-			"A website portfolio to showcase my work and personality.",
-			[
-				"JavaScript",
-				"React",
-				"CSS",
-				"Vite",
-				"Chakra UI",
-				"Framer Motion",
-				"Figma",
-			],
-			"https://github.com/SandKat214/Portfolio-Resume",
-			undefined,
-			"/images/portfolio.png"
-		),
-		chessGUI: new Project(
-			"Chess User Interface",
-			"A traditional game of chess with all the fixings. Pop-up messaging system delivers immediate feedback on moves & game.",
-			["Python", "Pygame"],
-			"https://github.com/SandKat214/Chess",
-			"https://sandkat214.itch.io/chess",
-			"/images/chessGUI.png"
-		),
-		ioProcedures: new Project(
-			"Using Low-Level I/O Procedures",
-			"A simple assembly language program that prompts the user for input, manipulates the data, and displays the results.",
-			["Assembly"],
-			"https://github.com/SandKat214/ioProcedures",
-			undefined,
-			"/images/ioProcedures.png"
-		),
-		planetaryLibs: new Project(
-			"Planetary Liberators",
-			"A recruitment application for the Helldivers II videogame. Utilizes a relational database backend to store user data, team managment, and relationship features. Developed via a collaborative team environment.",
-			["JavaScript", "SQL", "React", "Express", "MariaDB", "Chakra UI"],
-			"https://github.com/SandKat214/PlanetaryLiberatorsDatabaseApp",
-			undefined,
-			"/images/planetaryLibs.png"
-		),
-		ticTacToe: new Project(
-			"Tic-Tac-Toe User Interface",
-			"A simple game of Tic-Tac-Toe.",
-			["Python", "Pygame"],
-			"https://github.com/SandKat214/Tic-Tac-Toe",
-			undefined,
-			"/images/ticTacToe.png"
-		),
-		webDevSite: new Project(
-			"Web Development Portfolio",
-			"Portfolio single page application and MERN stack with a dynamic interface for performing CRUD operations on an art database.",
-			["JavaScript", "HTML", "CSS", "React", "Express.js", "MongoDB"],
-			"https://github.com/SandKat214/WebDevPortfolio",
-			"https://sandeenk-webdev-portfolio.onrender.com/",
-			"/images/webDevSite.png"
-		),
-	},
+	sections: {},
 }
 
 export const contact = {
