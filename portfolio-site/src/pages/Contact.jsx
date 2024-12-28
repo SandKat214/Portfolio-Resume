@@ -16,14 +16,14 @@ import {
 } from "@chakra-ui/react"
 import {
 	Form,
-	useActionData,
 	useNavigation,
 	useOutletContext,
-	useSubmit,
 } from "react-router-dom"
 import { useFormik } from "formik"
 import * as yup from "yup"
-import emailjs from "@emailjs/browser"
+import { useMutation } from "@tanstack/react-query"
+import axios from "axios"
+
 
 // Components
 import LocalNav from "../components/navigation/LocalNav"
@@ -33,45 +33,14 @@ import { IoMdMail } from "react-icons/io"
 import { FaPhone } from "react-icons/fa"
 import { FaLocationDot } from "react-icons/fa6"
 import { RiSendPlaneFill } from "react-icons/ri"
-import { useEffect } from "react"
+import { useState } from "react"
 
-// Action function
-export const ContactAction = async ({ request }) => {
-	const data = await request.formData()
-	const values = {
-		name: data.get("name"),
-		email: data.get("email"),
-		subject: data.get("subject"),
-		message: data.get("message"),
-	}
-
-	// send email to school account
-	try {
-		const res = await emailjs.send(
-			import.meta.env.VITE_SERVICE_ID,
-			import.meta.env.VITE_TEMPLATE_ID,
-			values,
-			{
-				publicKey: import.meta.env.VITE_PUBLIC_KEY,
-			}
-		)
-		console.log(`Status: ${res.status}, ${res.text}`)
-		return { text: "Email successfully submitted!", status: "success" }
-	} catch (error) {
-		console.error(error)
-		return {
-			text: "Something went wrong. Please try direct method.",
-			status: "error",
-		}
-	}
-}
 
 const Contact = ({ contact }) => {
 	const isLrgScreen = useOutletContext()
-	const submit = useSubmit()
 	const navigation = useNavigation()
 	const toast = useToast()
-	const data = useActionData()
+	const [status, setStatus] = useState(null)
 
 	const formik = useFormik({
 		initialValues: {
@@ -90,18 +59,34 @@ const Contact = ({ contact }) => {
 			message: yup.string().required("Message is required:"),
 		}),
 		onSubmit: async (values) => {
-			submit(values, {
-				method: "post",
-				action: "/contact",
-			})
+			mutateAsync(values)
 		},
 	})
 
-	useEffect(() => {
-		if (data) {
-			toast({ description: data.text, status: data.status })
-		}
-	}, [data])
+	// send contact email
+	const { isPending, mutateAsync } = useMutation({
+		mutationFn: async (values) => {
+			try {
+				const data = {
+					name: values.name,
+					email: values.email,
+					subject: values.subject,
+					message: values.message,
+				}
+				const res = await axios.post(`${import.meta.env.VITE_API}contact/`, data)
+				setStatus(res.status)
+				toast({ description: "Email sent.", status: "success" })
+			} catch (error) {
+				console.log(error)
+				toast({
+					description:
+						error.response.data.message ||
+						"Error sending email.",
+					status: "error",
+				})
+			}
+		},
+	})
 
 	return (
 		<Container
@@ -208,7 +193,7 @@ const Contact = ({ contact }) => {
 							>
 								...or via form
 							</Heading>
-							{data && data.status === "success" ? (
+							{status && status === 200 ? (
 								<VStack
 									w='80%'
 									gap={15}
@@ -387,10 +372,7 @@ const Contact = ({ contact }) => {
 													boxSize={4}
 												/>
 											}
-											isLoading={
-												navigation.state ===
-												"submitting"
-											}
+											isLoading={isPending}
 											loadingText={"Sending..."}
 										>
 											<Text>Send</Text>

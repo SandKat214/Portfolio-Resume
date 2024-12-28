@@ -17,7 +17,7 @@ import ProjectsLayout from "./layouts/ProjectsLayout"
 import Home from "./pages/Home"
 import Resume from "./pages/resume/Resume"
 import Projects from "./pages/projects/Projects"
-import Contact, { ContactAction } from "./pages/Contact"
+import Contact from "./pages/Contact"
 import Education from "./pages/resume/Education"
 import Experience from "./pages/resume/Experience"
 import Skills from "./pages/resume/Skills"
@@ -62,7 +62,6 @@ const router = createBrowserRouter(
 			<Route
 				path='contact'
 				element={<Contact contact={contact} />}
-				action={ContactAction}
 			/>
 		</Route>
 	)
