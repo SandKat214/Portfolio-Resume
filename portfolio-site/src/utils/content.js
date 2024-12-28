@@ -12,6 +12,7 @@ import {
 	SiChakraui,
 	SiMongodb,
 	SiMariadb,
+	SiPostman,
 } from "react-icons/si"
 import { IoLogoCss3 } from "react-icons/io"
 import { TbSql } from "react-icons/tb"
@@ -58,6 +59,7 @@ export const resume = {
 				new Skill("Git", FaGitAlt, "https://git-scm.com/"),
 				new Skill("GitHub", FaGithub, "https://github.com/"),
 				new Skill("Figma", IoLogoFigma, "https://www.figma.com/"),
+				new Skill("Postman", SiPostman, "https://www.postman.com/"),
 			],
 			databases: [
 				new Skill("MongoDB", SiMongodb, "https://www.mongodb.com/"),
