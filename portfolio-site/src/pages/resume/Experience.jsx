@@ -1,18 +1,50 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import {
+	Center,
 	Divider,
 	Heading,
 	ListItem,
+	Spinner,
 	Text,
 	UnorderedList,
+	useToast,
 	VStack,
 } from "@chakra-ui/react"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useOutletContext } from "react-router-dom"
+import { useQuery } from "@tanstack/react-query"
+import axios from "axios"
 
-const Experience = ({ items }) => {
+const Experience = () => {
 	const { setHeading } = useOutletContext()
+	const toast = useToast()
+
+	const [items, setItems] = useState([])
+
+	// Fetch education from db
+	const { isFetching } = useQuery({
+		queryKey: ["education"],
+		queryFn: async () => {
+			try {
+				const res = await axios.get(
+					`${import.meta.env.VITE_API}experience/`
+				)
+
+				setItems(res.data)
+				return res.data
+			} catch (error) {
+				console.log(error)
+				toast({
+					description:
+						error.response.data.error ||
+						"Could not retrieve experience from server.",
+					status: "error",
+				})
+				return error
+			}
+		},
+	})
 
 	const stackItems = items.map((item, index) => {
 		return (
@@ -59,7 +91,11 @@ const Experience = ({ items }) => {
 			maxW='650px'
 			divider={<Divider borderColor='secondary.100' />}
 		>
-			{stackItems}
+			{isFetching ? (
+				<Center h='100%' w='100%'>
+					<Spinner color='foreground' size='xl' />
+				</Center>
+			) : (stackItems)}
 		</VStack>
 	)
 }

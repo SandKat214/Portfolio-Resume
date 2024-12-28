@@ -33,11 +33,11 @@ const router = createBrowserRouter(
 				<Route index element={<Resume />} />
 				<Route
 					path='education'
-					element={<Education items={resume.sections.education} />}
+					element={<Education />}
 				/>
 				<Route
 					path='experience'
-					element={<Experience items={resume.sections.experience} />}
+					element={<Experience />}
 				/>
 				<Route
 					path='skills'
