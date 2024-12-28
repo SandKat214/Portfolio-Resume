@@ -81,22 +81,13 @@ const Contact = ({ contact }) => {
 			message: "",
 		},
 		validationSchema: yup.object().shape({
-			name: yup
-				.string()
-				.required("Name is required:")
-				.min(2, "Name must be at least 2 characters:"),
+			name: yup.string().required("Name is required:"),
 			email: yup
 				.string()
 				.email("Enter a valid email:")
 				.required("Email is required:"),
-			subject: yup
-				.string()
-				.required("Subject line is required:")
-				.min(5, "Subject must be at least 5 characters:"),
-			message: yup
-				.string()
-				.required("Message is required:")
-				.min(10, "Message must be at least 10 characters:"),
+			subject: yup.string().required("Subject line is required:"),
+			message: yup.string().required("Message is required:"),
 		}),
 		onSubmit: async (values) => {
 			submit(values, {
@@ -285,7 +276,6 @@ const Contact = ({ contact }) => {
 														formik.handleChange
 													}
 													onBlur={formik.handleBlur}
-													minLength={2}
 													isRequired
 													size='xs'
 													w='100%'
@@ -352,7 +342,6 @@ const Contact = ({ contact }) => {
 												onChange={formik.handleChange}
 												onBlur={formik.handleBlur}
 												isRequired
-												minLength={5}
 												size='xs'
 												variant='contact'
 											/>
@@ -382,7 +371,6 @@ const Contact = ({ contact }) => {
 												onChange={formik.handleChange}
 												onBlur={formik.handleBlur}
 												isRequired
-												minLength={10}
 												variant='contact'
 												fontSize='xs'
 											/>
