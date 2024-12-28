@@ -17,14 +17,14 @@ const Home = () => {
 					as='h1'
 					variant='pinkHalo'
 					textTransform='capitalize'
-					size='3xl'
+					size='2xl'
 				>
 					Katherine Sandeen
 				</Heading>
 				<Heading
 					variant='gradient'
 					textTransform='uppercase'
-					size='2xl'
+					size='xl'
 				>
 					&#123; student, programmer, developer &#125;
 				</Heading>
@@ -50,20 +50,24 @@ const Home = () => {
 								label={
 									<Icon
 										as={ImGithub}
-										variant='externalLink'
+										variant='socialLink'
 										borderRadius='full'
 									/>
 								}
+								toolTip='Visit my GitHub'
+								variant='socialTip'
 							/>
 							<ExternalLink
 								path='https://www.linkedin.com/in/sandeenk/'
 								label={
 									<Icon
 										as={ImLinkedin}
-										variant='externalLink'
+										variant='socialLink'
 										borderRadius='4px'
 									/>
 								}
+								toolTip='Visit my LinkedIn'
+								variant='socialTip'
 							/>
 						</HStack>
 					)}

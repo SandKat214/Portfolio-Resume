@@ -127,7 +127,10 @@ const ProjectDetails = () => {
 											borderRadius='full'
 										/>
 									}
+									toolTip='GitHub Repo'
+									variant='skillTip'
 								/>
+						
 								{project.webLink && (
 									<ExternalLink
 										path={project.webLink}
@@ -138,6 +141,8 @@ const ProjectDetails = () => {
 												borderRadius='4px'
 											/>
 										}
+										toolTip='Web Link'
+										variant='skillTip'
 									/>
 								)}
 							</VStack>

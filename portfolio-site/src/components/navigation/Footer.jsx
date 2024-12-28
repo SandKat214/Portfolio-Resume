@@ -20,20 +20,24 @@ const Footer = () => {
 					label={
 						<Icon
 							as={ImGithub}
-							variant='externalLink'
+							variant='socialLink'
 							borderRadius='full'
 						/>
 					}
+					toolTip='Visit my GitHub'
+					variant='socialTip'
 				/>
 				<ExternalLink
 					path='https://www.linkedin.com/in/sandeenk/'
 					label={
 						<Icon
 							as={ImLinkedin}
-							variant='externalLink'
+							variant='socialLink'
 							borderRadius='4px'
 						/>
 					}
+					toolTip='Visit my LinkedIn'
+					variant='socialTip'
 				/>
 			</HStack>
 		</HStack>

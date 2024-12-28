@@ -136,10 +136,13 @@ const theme = extendTheme({
 
 		Icon: {
 			variants: {
-				externalLink: {
+				socialLink: {
 					color: "secondary.100",
-					boxSize: "35px",
+					p: "4px",
+					boxSize: "45px",
 					_hover: {
+						color: "background",
+						bg: "secondary.100",
 						boxShadow: "0 0 20px #D253FF",
 					},
 					_active: {
@@ -185,6 +188,7 @@ const theme = extendTheme({
 		Link: {
 			variants: {
 				global: {
+					fontSize: '1.1em',
 					borderRadius: "40px",
 					fontWeight: "bold",
 					color: "primary.100",
@@ -317,6 +321,12 @@ const theme = extendTheme({
 					color: "primary.100",
 					fontSize: "xs",
 					border: "1px solid #00DBB4",
+				},
+				socialTip: {
+					bg: "background",
+					color: "secondary.100",
+					fontSize: "xs",
+					border: "1px solid #D253FF",
 				},
 			},
 		},
