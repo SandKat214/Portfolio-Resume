@@ -126,8 +126,8 @@ const theme = extendTheme({
 					textShadow: "0 0 10px #D253FF",
 				},
 				gradient: {
+					color: "white",
 					fontWeight: "bold",
-					// textTransform: 'lowercase',
 					bgGradient: "linear(to-r, #00DBB4, #D253FF)",
 					bgClip: "text",
 				},

@@ -1,5 +1,6 @@
 import { Button, Center, Heading, HStack, Icon, VStack } from "@chakra-ui/react"
 import { Link as RRLink, useOutletContext } from "react-router-dom"
+import Typewriter from "typewriter-effect"
 
 // Icons
 import { ImGithub, ImLinkedin } from "react-icons/im"
@@ -22,7 +23,16 @@ const Home = () => {
 					Katherine Sandeen
 				</Heading>
 				<Heading variant='gradient' textTransform='uppercase' size='xl'>
-					&#123; student, programmer, developer &#125;
+					<Typewriter
+						onInit={(typewriter) => {
+							typewriter
+								.typeString(
+									"{ STUDENT, PROGRAMMER, DEVELOPER }"
+								)
+								.start()
+						}}
+					/>
+					{/* &#123; student, programmer, developer &#125; */}
 				</Heading>
 				<Heading as='h3' fontWeight='100' size='md'>
 					An ambitious student of computer science and part-time
