@@ -95,7 +95,9 @@ const Experience = () => {
 				<Center h='100%' w='100%'>
 					<Spinner color='foreground' size='xl' />
 				</Center>
-			) : (stackItems)}
+			) : (
+				stackItems
+			)}
 		</VStack>
 	)
 }

@@ -31,14 +31,8 @@ const router = createBrowserRouter(
 
 			<Route path='resume' element={<ResumeLayout resume={resume} />}>
 				<Route index element={<Resume />} />
-				<Route
-					path='education'
-					element={<Education />}
-				/>
-				<Route
-					path='experience'
-					element={<Experience />}
-				/>
+				<Route path='education' element={<Education />} />
+				<Route path='experience' element={<Experience />} />
 				<Route
 					path='skills'
 					element={<Skills items={resume.sections.skills} />}
@@ -49,20 +43,11 @@ const router = createBrowserRouter(
 				path='projects'
 				element={<ProjectsLayout projects={projects} />}
 			>
-				<Route
-					index
-					element={<Projects />}
-				/>
-				<Route
-					path=':projKey'
-					element={<ProjectDetails />}
-				/>
+				<Route index element={<Projects />} />
+				<Route path=':projKey' element={<ProjectDetails />} />
 			</Route>
 
-			<Route
-				path='contact'
-				element={<Contact contact={contact} />}
-			/>
+			<Route path='contact' element={<Contact contact={contact} />} />
 		</Route>
 	)
 )

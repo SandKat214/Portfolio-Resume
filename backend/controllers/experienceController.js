@@ -4,7 +4,10 @@ const Experience = require("../models/experienceModel")
 const getExperience = async (req, res) => {
 	try {
 		// retrieve array of experience
-		const experience = await Experience.find().sort({ endYear: -1, startYear: -1 })
+		const experience = await Experience.find().sort({
+			endYear: -1,
+			startYear: -1,
+		})
 
 		console.log("All experience retrieved from the db.")
 		res.status(200).json(experience)

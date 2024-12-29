@@ -188,7 +188,7 @@ const theme = extendTheme({
 		Link: {
 			variants: {
 				global: {
-					fontSize: '1.1em',
+					fontSize: "1.1em",
 					borderRadius: "40px",
 					fontWeight: "bold",
 					color: "primary.100",

@@ -21,11 +21,7 @@ const Home = () => {
 				>
 					Katherine Sandeen
 				</Heading>
-				<Heading
-					variant='gradient'
-					textTransform='uppercase'
-					size='xl'
-				>
+				<Heading variant='gradient' textTransform='uppercase' size='xl'>
 					&#123; student, programmer, developer &#125;
 				</Heading>
 				<Heading as='h3' fontWeight='100' size='md'>

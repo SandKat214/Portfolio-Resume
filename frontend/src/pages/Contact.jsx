@@ -14,16 +14,11 @@ import {
 	useToast,
 	VStack,
 } from "@chakra-ui/react"
-import {
-	Form,
-	useNavigation,
-	useOutletContext,
-} from "react-router-dom"
+import { Form, useOutletContext } from "react-router-dom"
 import { useFormik } from "formik"
 import * as yup from "yup"
 import { useMutation } from "@tanstack/react-query"
 import axios from "axios"
-
 
 // Components
 import LocalNav from "../components/navigation/LocalNav"
@@ -35,10 +30,8 @@ import { FaLocationDot } from "react-icons/fa6"
 import { RiSendPlaneFill } from "react-icons/ri"
 import { useState } from "react"
 
-
 const Contact = ({ contact }) => {
 	const isLrgScreen = useOutletContext()
-	const navigation = useNavigation()
 	const toast = useToast()
 	const [status, setStatus] = useState(null)
 
@@ -73,15 +66,17 @@ const Contact = ({ contact }) => {
 					subject: values.subject,
 					message: values.message,
 				}
-				const res = await axios.post(`${import.meta.env.VITE_API}contact/`, data)
+				const res = await axios.post(
+					`${import.meta.env.VITE_API}contact/`,
+					data
+				)
 				setStatus(res.status)
 				toast({ description: "Email sent.", status: "success" })
 			} catch (error) {
 				console.log(error)
 				toast({
 					description:
-						error.response.data.message ||
-						"Error sending email.",
+						error.response.data.message || "Error sending email.",
 					status: "error",
 				})
 			}

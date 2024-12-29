@@ -130,7 +130,7 @@ const ProjectDetails = () => {
 									toolTip='GitHub Repo'
 									variant='skillTip'
 								/>
-						
+
 								{project.webLink && (
 									<ExternalLink
 										path={project.webLink}

@@ -68,10 +68,16 @@ const ProjectsLayout = ({ projects }) => {
 							isLrgScreen={isLrgScreen}
 							page={projects}
 						/>
-						<Outlet context={{ isLrgScreen, projects: projects.sections, setHeading, setIsIndex }} />
+						<Outlet
+							context={{
+								isLrgScreen,
+								projects: projects.sections,
+								setHeading,
+								setIsIndex,
+							}}
+						/>
 					</>
 				)}
-				
 			</VStack>
 		</Container>
 	)
