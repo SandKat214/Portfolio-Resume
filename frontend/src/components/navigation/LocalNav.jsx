@@ -19,7 +19,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons"
 import { GrDocumentPdf } from "react-icons/gr"
 
 const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
-	// Returns menu items from the keys in the resume object
+	// Returns menu items from the keys in the page sections object
 	const menuItems = Object.keys(page.sections).map((route) => {
 		return (
 			<MenuItem key={route} as={NavLink} to={route}>

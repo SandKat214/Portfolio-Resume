@@ -82,7 +82,7 @@ const ProjectDetails = () => {
 					<VStack
 						w={["100%", "100%", "100%", "40%"]}
 						spacing={["24px"]}
-						py={["20px", "20px", "20px", "60px"]}
+						py={["20px", "20px", "20px", "30px"]}
 					>
 						<Heading
 							as='h2'
