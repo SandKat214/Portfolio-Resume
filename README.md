@@ -2,17 +2,16 @@
 This is the source code for my personal portfolio website. It showcases my technical skills, experience, and a collection of personal projects I've worked on. Built with modern web technologies, this portfolio is designed to provide a professional online presence to link to all my work and connect with potential employers or collaborators.
 
 ## Technologies Used
-- **JavaScript**
-- **React:** Used for building the user interface with a component-based structure.
-- **Express.js:** Framework for building the backend server.
-- **Node.js:** Backend runtime environment.
-- **MongoDB:** NoSQL database for storing project data and other information.
-- **Chakra UI:** Component library used for building a responsive and accessible design.
-- **Figma:** Wireframing tool used to design the layout and structure of the portfolio.
+- **Backend:** Node.js, Express.js
+- **Frontend:** JavaScript, React, Chakra UI
+- **Database:** MongoDB (NoSQL for storing project data and other information)
+- **Design:** Figma (layout and structure)
+- **Contact:** EmailJS (for sending messages via the contact form)
 
 ## Features
 - **Interactive Portfolio:** Links to personal projects, each with detailed descriptions.
 - **Technical Skills Showcase:** Displays technical skills with links to documentation.
+- **Contact Form:** Allows visitors to reach out easily via a direct email service.
 - **Responsive Design:** The website is fully responsive, ensuring a seamless experience across different devices (desktop, tablet, mobile).
 - **Clean and Modern UI:** Designed with Chakra UI for a simple, professional look.
 - **Easy Navigation:** User-friendly interface that allows easy access to different sections of the portfolio.
