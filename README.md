@@ -32,6 +32,9 @@ The portfolio website is deployed on a DigitalOcean Droplet running Ubuntu OS. T
 
 *This setup provides a secure environment for hosting the portfolio with efficient traffic management and high availability.*
 
+## Preview
+![Content Preview](https://github.com/user-attachments/assets/d118076d-b90d-4060-8c27-4cf75ac82991)
+
 ---
 ### Visit Deployment
 [www.ksandeen.com](https://www.ksandeen.com)
