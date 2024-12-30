@@ -1,5 +1,5 @@
 # Personal Portfolio
-This is the source code for my personal portfolio website. It showcases my technical skills, experience, and a collection of personal projects I've worked on. Built with modern web technologies, this portfolio is designed to provide a professional online presence.
+This is the source code for my personal portfolio website. It showcases my technical skills, experience, and a collection of personal projects I've worked on. Built with modern web technologies, this portfolio is designed to provide a professional online presence to link to all my work and connect with potential employers or collaborators.
 
 ## Technologies Used
 - **JavaScript**
