@@ -150,7 +150,7 @@ const Contact = ({ contact }) => {
 								</Link>
 								<Link
 									as='a'
-									href='tel:+9043864846'
+									href='tel:+19043864846'
 									variant='contact'
 								>
 									<HStack>
