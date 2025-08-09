@@ -36,6 +36,16 @@ const theme = extendTheme({
 			"::-webkit-scrollbar-thumb": {
 				bgColor: "secondary.900",
 			},
+			".typewriter-wrapper-gradient": {
+				bgGradient: "linear(to-r, #00DBB4, #D253FF)",
+				bgClip: "text",
+				// Required to make bgClip work with a span
+				display: "inline-block",
+			},
+			".Typewriter__cursor": {
+				color: "secondary.100",
+				textShadow: "0 0 5px #D253FF",
+			},
 		},
 	},
 
@@ -124,12 +134,6 @@ const theme = extendTheme({
 					fontStyle: "italic",
 					fontWeight: "bold",
 					textShadow: "0 0 10px #D253FF",
-				},
-				gradient: {
-					color: "white",
-					fontWeight: "bold",
-					bgGradient: "linear(to-r, #00DBB4, #D253FF)",
-					bgClip: "text",
 				},
 			},
 		},

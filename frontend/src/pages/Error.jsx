@@ -4,6 +4,9 @@ import { Link as RRLink, useRouteError } from "react-router-dom"
 // Icons
 import { ImHome } from "react-icons/im"
 
+// Components
+import TypewriterHeading from "../components/animations/TypewriterHeading"
+
 const Error = () => {
 	const error = useRouteError()
 	console.log(error)
@@ -12,14 +15,12 @@ const Error = () => {
 		<Center as='main' w='100vw' minH='100vh'>
 			<VStack as='section' w='90%' maxW='800px' spacing='50px'>
 				<VStack as='hgroup' spacing='40px'>
-					<Heading
+					<TypewriterHeading
+						text='{ error }'
 						as='h1'
-						variant='gradient'
 						textTransform='uppercase'
 						size='2xl'
-					>
-						&#123; error &#125;
-					</Heading>
+					/>
 					<VStack
 						as='blockquote'
 						textAlign='center'

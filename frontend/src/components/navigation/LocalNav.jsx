@@ -18,6 +18,9 @@ import { NavLink } from "react-router-dom"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 import { GrDocumentPdf } from "react-icons/gr"
 
+// Components
+import TypewriterHeading from "../animations/TypewriterHeading"
+
 const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
 	// Returns menu items from the keys in the page object
 	const menuItems = Object.keys(page.sections).map((route) => {
@@ -37,9 +40,11 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
 			align={["center", "flex-start"]}
 			gap='20px'
 		>
-			<Heading as='h1' variant='gradient' fontSize='1.8em'>
-				&#123; {heading} &#125;
-			</Heading>
+			<TypewriterHeading
+				text={`{  ${heading} }`}
+				as='h1'
+				fontSize='1.8em'
+			/>
 
 			{/** Only shows the menu on non-index pages */}
 			{isIndex ? (
