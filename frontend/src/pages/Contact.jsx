@@ -88,15 +88,11 @@ const Contact = ({ contact }) => {
 			as='main'
 			variant='greenHalo'
 			w={["100%", null, "90%"]}
-			minHeight='67vh'
-			maxHeight={["unset", null, null, "67vh"]}
 			px={["25px", null, null, "60px"]}
-			overflow='hidden'
 		>
 			<VStack
 				as='article'
 				minHeight='67vh'
-				maxHeight={["unset", null, null, "67vh"]}
 				py='30px'
 				maxW='100%'
 				gap={["35px", null, null, "20px"]}

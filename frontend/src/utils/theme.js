@@ -27,8 +27,8 @@ const theme = extendTheme({
 				color: "foreground",
 			},
 			"::-webkit-scrollbar": {
-				height: "3px",
-				width: "3px",
+				height: "8px",
+				width: "8px",
 			},
 			"::-webkit-scrollbar-track": {
 				background: "primary.100",
@@ -39,7 +39,6 @@ const theme = extendTheme({
 			".typewriter-wrapper-gradient": {
 				bgGradient: "linear(to-r, #00DBB4, #D253FF)",
 				bgClip: "text",
-				// Required to make bgClip work with a span
 				display: "inline-block",
 			},
 			".Typewriter__cursor": {

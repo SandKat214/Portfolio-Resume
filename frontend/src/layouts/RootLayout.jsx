@@ -27,7 +27,7 @@ const RootLayout = () => {
 	}, [])
 
 	return (
-		<VStack w='100vw' minH='100vh' align='center'>
+		<VStack w='99vw' minH='100vh' align='center'>
 			<VStack
 				w='100%'
 				maxW='1300px'

@@ -26,9 +26,8 @@ const Resume = () => {
 			flex={["unset", 1]}
 			align='center'
 			w='100%'
-			justify='space-evenly'
-			spacing='30px'
-			pb='20px'
+			justify="space-evenly"
+			spacing='40px'
 		>
 			<Flex
 				as='nav'

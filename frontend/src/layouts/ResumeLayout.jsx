@@ -16,18 +16,14 @@ const ResumeLayout = ({ resume }) => {
 			as='main'
 			variant='greenHalo'
 			w={["100%", null, "90%"]}
-			minHeight='67vh'
-			maxHeight={["unset", "unset", "67vh"]}
 			px={["25px", "25px", "60px"]}
-			overflow='hidden'
 		>
 			<VStack
 				as='article'
 				minHeight='67vh'
-				maxHeight={["unset", "unset", "67vh"]}
 				py='30px'
 				maxW='100%'
-				gap='20px'
+				gap='30px'
 			>
 				<LocalNav
 					heading={heading}

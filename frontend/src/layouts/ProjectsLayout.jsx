@@ -44,14 +44,11 @@ const ProjectsLayout = ({ projects }) => {
 			as='main'
 			variant='greenHalo'
 			w={["100%", null, "90%"]}
-			minHeight='67vh'
-			maxHeight={["unset", "unset", "unset", "67vh"]}
 			px={["25px", "25px", "60px"]}
 		>
 			<VStack
 				as='article'
 				minHeight='67vh'
-				maxHeight={["unset", "unset", "unset", "67vh"]}
 				py='30px'
 				maxW='100%'
 				gap='30px'
