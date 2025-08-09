@@ -7,17 +7,21 @@ import {
 	FaGithub,
 } from "react-icons/fa"
 import {
+	SiDotnet,
 	SiJavascript,
 	SiExpress,
 	SiChakraui,
+	SiGraphql,
 	SiMongodb,
-	SiMariadb,
+	SiMui,
+	SiMicrosoftsqlserver,
 	SiPostman,
+	SiTypescript,
 } from "react-icons/si"
 import { IoLogoCss3 } from "react-icons/io"
-import { TbSql } from "react-icons/tb"
+import { TbBrandCSharp, TbSql } from "react-icons/tb"
 import { IoLogoFigma } from "react-icons/io5"
-import { GrMysql } from "react-icons/gr"
+import { RiNextjsFill } from "react-icons/ri"
 
 class Skill {
 	constructor(name, icon, url) {
@@ -45,6 +49,16 @@ export const resume = {
 					SiJavascript,
 					"https://www.javascript.com/"
 				),
+				new Skill(
+					"TypeScript",
+					SiTypescript,
+					"https://www.typescriptlang.org/"
+				),
+				new Skill(
+					"C#",
+					TbBrandCSharp,
+					"https://learn.microsoft.com/en-us/dotnet/csharp/"
+				),
 				new Skill("HTML", FaHtml5, "https://html.com/"),
 				new Skill("CSS", IoLogoCss3, "https://html.com/css/"),
 				new Skill("SQL", TbSql, "https://www.w3schools.com/sql/"),
@@ -53,7 +67,10 @@ export const resume = {
 				new Skill("React", FaReact, "https://react.dev/"),
 				new Skill("Node.js", FaNodeJs, "https://nodejs.org/en"),
 				new Skill("Express.js", SiExpress, "https://expressjs.com/"),
+				new Skill(".NET", SiDotnet, "https://dotnet.microsoft.com/"),
+				new Skill("Next.js", RiNextjsFill, "https://nextjs.org/"),
 				new Skill("Chakra UI", SiChakraui, "https://v2.chakra-ui.com/"),
+				new Skill("Material UI", SiMui, "https://mui.com/"),
 			],
 			platforms: [
 				new Skill("Git", FaGitAlt, "https://git-scm.com/"),
@@ -63,8 +80,12 @@ export const resume = {
 			],
 			databases: [
 				new Skill("MongoDB", SiMongodb, "https://www.mongodb.com/"),
-				new Skill("MariaDB", SiMariadb, "https://mariadb.org/"),
-				new Skill("MySQL", GrMysql, "https://www.mysql.com/"),
+				new Skill(
+					"SSMS",
+					SiMicrosoftsqlserver,
+					"https://learn.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms"
+				),
+				new Skill("GraphQL", SiGraphql, "https://graphql.org/"),
 			],
 		},
 	},
