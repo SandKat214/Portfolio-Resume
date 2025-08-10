@@ -156,7 +156,7 @@ const ProjectDetails = () => {
 					>
 						<Image
 							src={project.image}
-							alt={project.title}
+							alt={`${project.title} image.\nCloudinary blocked or inaccessible.`}
 							maxH='100%'
 							maxW='100%'
 							float='right'
