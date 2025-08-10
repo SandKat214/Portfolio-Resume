@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types"
 import {
 	Flex,
-	Heading,
 	Icon,
 	Link,
 	Menu,
@@ -90,6 +89,13 @@ const LocalNav = ({ heading, isIndex, isLrgScreen, page }) => {
 			)}
 		</Flex>
 	)
+}
+
+LocalNav.propTypes = {
+	heading: PropTypes.string.isRequired,
+	isIndex: PropTypes.bool.isRequired,
+	isLrgScreen: PropTypes.bool.isRequired,
+	page: PropTypes.object.isRequired,
 }
 
 export default LocalNav

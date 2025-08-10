@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types"
 import { Link, Tooltip } from "@chakra-ui/react"
 import { Link as RRLink } from "react-router-dom"
 
@@ -10,6 +10,13 @@ const ExternalLink = ({ path, label, toolTip, variant }) => {
 			</Link>
 		</Tooltip>
 	)
+}
+
+ExternalLink.propTypes = {
+	path: PropTypes.string.isRequired,
+	label: PropTypes.node.isRequired,
+	toolTip: PropTypes.string.isRequired,
+	variant: PropTypes.string.isRequired,
 }
 
 export default ExternalLink

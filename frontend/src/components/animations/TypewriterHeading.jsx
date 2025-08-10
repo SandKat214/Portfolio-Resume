@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types"
 import { Heading } from "@chakra-ui/react"
 import Typewriter from "typewriter-effect"
 
@@ -26,6 +26,12 @@ const TypewriterHeading = ({ text, keepCursor = false, ...props }) => {
 			/>
 		</Heading>
 	)
+}
+
+TypewriterHeading.propTypes = {
+	text: PropTypes.string.isRequired,
+	keepCursor: PropTypes.bool,
+	props: PropTypes.object,
 }
 
 export default TypewriterHeading

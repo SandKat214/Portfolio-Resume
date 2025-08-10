@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import {
 	Button,
 	Container,
@@ -130,7 +131,7 @@ const Contact = ({ contact }) => {
 								fontSize='sm'
 							>
 								<Text fontWeight={300}>
-									Katherine 'Katie' Sandeen
+									Katherine &lsquo;Katie&rsquo; Sandeen
 								</Text>
 								<Link
 									as='a'
@@ -377,6 +378,10 @@ const Contact = ({ contact }) => {
 			</VStack>
 		</Container>
 	)
+}
+
+Contact.propTypes = {
+	contact: PropTypes.object.isRequired,
 }
 
 export default Contact

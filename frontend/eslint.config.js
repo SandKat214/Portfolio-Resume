@@ -6,6 +6,19 @@ import reactRefresh from "eslint-plugin-react-refresh"
 
 export default [
 	{ ignores: ["dist"] },
+
+	// Node override for vite.config.js
+	{
+		files: ["vite.config.js"],
+		languageOptions: {
+			globals: globals.node,
+			parserOptions: {
+				ecmaVersion: "latest",
+				sourceType: "module",
+			},
+		},
+	},
+
 	{
 		files: ["**/*.{js,jsx}"],
 		languageOptions: {

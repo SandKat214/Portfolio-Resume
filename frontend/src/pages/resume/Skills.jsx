@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types"
 import { Box, Flex, Heading, Icon, Tooltip } from "@chakra-ui/react"
 import { useOutletContext } from "react-router-dom"
 import { useEffect } from "react"
@@ -148,6 +148,17 @@ const Skills = ({ items }) => {
 			/>
 		</Flex>
 	)
+}
+
+SkillCircle.propTypes = {
+	title: PropTypes.string.isRequired,
+	items: PropTypes.array.isRequired,
+	radius: PropTypes.number,
+	iconSize: PropTypes.number,
+}
+
+Skills.propTypes = {
+	items: PropTypes.object.isRequired,
 }
 
 export default Skills

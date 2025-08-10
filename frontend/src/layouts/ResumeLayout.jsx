@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types"
 import { Container, VStack } from "@chakra-ui/react"
 import { useState } from "react"
 import { Outlet, useOutletContext } from "react-router-dom"
@@ -35,6 +35,10 @@ const ResumeLayout = ({ resume }) => {
 			</VStack>
 		</Container>
 	)
+}
+
+ResumeLayout.propTypes = {
+	resume: PropTypes.object.isRequired,
 }
 
 export default ResumeLayout

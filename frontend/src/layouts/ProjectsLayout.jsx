@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types"
 import { Center, Container, Spinner, VStack, useToast } from "@chakra-ui/react"
 import { useState } from "react"
 import { Outlet, useOutletContext } from "react-router-dom"
@@ -78,6 +78,10 @@ const ProjectsLayout = ({ projects }) => {
 			</VStack>
 		</Container>
 	)
+}
+
+ProjectsLayout.propTypes = {
+	projects: PropTypes.object.isRequired,
 }
 
 export default ProjectsLayout

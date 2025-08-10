@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types"
 import {
 	Drawer,
 	DrawerContent,
@@ -78,6 +78,10 @@ const Navbar = ({ isLrgScreen }) => {
 			</Link>
 		</HStack>
 	)
+}
+
+Navbar.propTypes = {
+	isLrgScreen: PropTypes.bool.isRequired,
 }
 
 export default Navbar
