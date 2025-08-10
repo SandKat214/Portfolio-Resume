@@ -20,6 +20,7 @@ const Error = () => {
 						as='h1'
 						textTransform='uppercase'
 						size='2xl'
+						keepCursor={true}
 					/>
 					<VStack
 						as='blockquote'
