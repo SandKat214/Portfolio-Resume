@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import {
 	Center,
@@ -49,7 +48,7 @@ const Education = () => {
 
 	useEffect(() => {
 		setHeading("education")
-	}, [])
+	}, [setHeading])
 
 	const stackItems = items.map((item, index) => {
 		return (

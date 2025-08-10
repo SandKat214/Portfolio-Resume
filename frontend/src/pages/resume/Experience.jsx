@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import {
 	Center,
@@ -79,7 +78,7 @@ const Experience = () => {
 
 	useEffect(() => {
 		setHeading("experience")
-	}, [])
+	}, [setHeading])
 
 	return (
 		<VStack

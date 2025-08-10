@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { Button, Flex, Icon, Link, Text, VStack } from "@chakra-ui/react"
 import { useEffect } from "react"
 import { Link as RRLink, useOutletContext } from "react-router-dom"
@@ -19,14 +18,14 @@ const Resume = () => {
 		return () => {
 			setIsIndex(false)
 		}
-	}, [])
+	}, [setHeading, setIsIndex])
 
 	return (
 		<VStack
 			flex={["unset", 1]}
 			align='center'
 			w='100%'
-			justify="space-evenly"
+			justify='space-evenly'
 			spacing='40px'
 		>
 			<Flex

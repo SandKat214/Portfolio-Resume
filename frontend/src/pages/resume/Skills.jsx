@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { Box, Flex, Heading, Icon, Tooltip } from "@chakra-ui/react"
 import { useOutletContext } from "react-router-dom"
@@ -24,9 +23,9 @@ const SkillCircle = ({ title, items, radius = 120, iconSize = 40 }) => {
 	}
 
 	const itemVariants = (index) => {
-		// angle for item on the circle
+		// angle for item on the circle (360 = 2PI radians)
 		const angle = (index / numItems) * 2 * Math.PI
-		// x and y coordinates on the circle
+		// horizontal and vertical offsets from center
 		const x = radius * Math.cos(angle)
 		const y = radius * Math.sin(angle)
 
@@ -37,6 +36,7 @@ const SkillCircle = ({ title, items, radius = 120, iconSize = 40 }) => {
 				y,
 				opacity: 1,
 				scale: 1,
+				// higher stiffness = snappier, higher damping = less bounce
 				transition: { type: "spring", stiffness: 100, damping: 30 },
 			},
 		}
@@ -44,7 +44,7 @@ const SkillCircle = ({ title, items, radius = 120, iconSize = 40 }) => {
 
 	return (
 		<Box
-			position='relative'
+			position='relative' // allows absolute positioning of icons
 			w={`${radius * 2 + iconSize}px`}
 			h={`${radius * 2 + iconSize}px`}
 			flexShrink={0}
@@ -109,7 +109,7 @@ const Skills = ({ items }) => {
 
 	useEffect(() => {
 		setHeading("skills")
-	}, [])
+	}, [setHeading])
 
 	return (
 		<Flex

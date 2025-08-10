@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react-hooks/exhaustive-deps */
 import {
 	Button,
 	Card,
@@ -118,7 +117,7 @@ const Projects = () => {
 		return () => {
 			setIsIndex(false)
 		}
-	}, [])
+	}, [setHeading, setIsIndex])
 
 	return (
 		<VStack

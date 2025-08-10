@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import {
 	Box,
 	Center,
@@ -58,7 +57,7 @@ const ProjectDetails = () => {
 
 	useEffect(() => {
 		setHeading(projKey)
-	}, [projKey])
+	}, [projKey, setHeading])
 
 	return (
 		<>
