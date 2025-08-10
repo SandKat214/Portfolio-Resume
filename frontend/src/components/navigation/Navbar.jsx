@@ -10,6 +10,7 @@ import {
 	useDisclosure,
 	VStack,
 } from "@chakra-ui/react"
+import { Link } from "react-router-dom"
 
 // Icons
 import { HamburgerIcon } from "@chakra-ui/icons"
@@ -72,7 +73,9 @@ const Navbar = ({ isLrgScreen }) => {
 					</Drawer>
 				</>
 			)}
-			<Image boxSize='45px' src='/Avatar.svg' />
+			<Link to='/'>
+				<Image boxSize='45px' src='/Avatar.svg' />
+			</Link>
 		</HStack>
 	)
 }
