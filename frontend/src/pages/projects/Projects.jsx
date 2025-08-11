@@ -38,12 +38,16 @@ const Projects = () => {
 					<Image
 						src={projects[route].image}
 						alt={`${projects[route].title} image`}
-						fallbackSrc={fallbackImage}
 						h='50px'
 						w='100%'
 						objectFit='cover'
 						objectPosition='top'
 						borderTopRadius='md'
+						onError={(e) => {
+							const img = e.currentTarget
+							img.onerror = null // avoid infinite loop
+							img.src = fallbackImage
+						}}
 					/>
 				</CardHeader>
 				<CardBody as='header'>

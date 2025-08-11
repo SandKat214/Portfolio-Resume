@@ -146,13 +146,17 @@ const ProjectDetails = () => {
 					>
 						<Image
 							src={project.image}
-							fallbackSrc={fallbackImage}
-							alt={`${project.title} image.\nCloudinary blocked or inaccessible.`}
+							alt={`${project.title} image.`}
 							maxH='100%'
 							maxW='100%'
 							float='right'
 							borderRadius='10px'
 							boxShadow={["0 0 10px #D253FF", "0 0 30px #D253FF"]}
+							onError={(e) => {
+								const img = e.currentTarget
+								img.onerror = null // avoid infinite loop
+								img.src = fallbackImage
+							}}
 						/>
 					</Box>
 				</Flex>
