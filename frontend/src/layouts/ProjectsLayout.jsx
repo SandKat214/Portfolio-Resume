@@ -31,7 +31,7 @@ const ProjectsLayout = ({ projects }) => {
 			projects.sections = res.data
 			return res.data
 		},
-		retry: 1,
+		retry: false,
 	})
 
 	// Fire toast on error
@@ -83,7 +83,7 @@ const ProjectsLayout = ({ projects }) => {
 					gap='30px'
 				>
 					{isLoading ? (
-						<Center h='100%' w='100%'>
+						<Center flex={1} h='100%' w='100%'>
 							<Spinner color='foreground' size='xl' />
 						</Center>
 					) : (

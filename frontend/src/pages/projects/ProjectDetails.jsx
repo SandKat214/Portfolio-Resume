@@ -52,7 +52,7 @@ const ProjectDetails = () => {
 	return (
 		<>
 			{isFetching ? (
-				<Center h='100%' w='100%'>
+				<Center flex={1} h='100%' w='100%' pb='70px'>
 					<Spinner color='foreground' size='xl' />
 				</Center>
 			) : (

@@ -1,4 +1,5 @@
 import {
+	Button,
 	Center,
 	Divider,
 	Flex,
@@ -22,32 +23,34 @@ const Education = () => {
 	const [items, setItems] = useState([])
 
 	// Fetch education from db
-	const { isFetching } = useQuery({
+	const { isError, error, refetch, isFetching } = useQuery({
 		queryKey: ["education"],
 		queryFn: async () => {
-			try {
-				const res = await axios.get(
-					`${import.meta.env.VITE_API}education/`
-				)
+			const res = await axios.get(`${import.meta.env.VITE_API}education/`)
 
-				setItems(res.data)
-				return res.data
-			} catch (error) {
-				console.log(error)
-				toast({
-					description:
-						error.response.data.error ||
-						"Could not retrieve education from server.",
-					status: "error",
-				})
-				return error
-			}
+			setItems(res.data)
+			return res.data
 		},
+		retry: false,
 	})
 
+	// Set page heading
 	useEffect(() => {
 		setHeading("education")
 	}, [setHeading])
+
+	// Fire toast on error
+	useEffect(() => {
+		if (isError && error) {
+			console.error(error)
+			toast({
+				description:
+					error.response?.data?.error ||
+					"Could not retrieve education from server.",
+				status: "error",
+			})
+		}
+	}, [isError, error, toast])
 
 	const stackItems = items.map((item, index) => {
 		return (
@@ -113,18 +116,39 @@ const Education = () => {
 		)
 	})
 
-	return (
+	return isError ? (
+		<Center pb='70px' flex={1} maxW='100%'>
+			<VStack spacing={5}>
+				<Heading
+					as='h2'
+					variant='pinkHalo'
+					fontWeight='bold'
+					fontSize='xl'
+				>
+					Failed to load projects.
+				</Heading>
+				<Button
+					onClick={() => refetch()}
+					isLoading={isFetching}
+					variant='pinkLight'
+				>
+					Retry
+				</Button>
+			</VStack>
+		</Center>
+	) : (
 		<VStack
 			px={["15px", "60px"]}
 			py='20px'
 			w='100%'
+			flex={1}
 			spacing='40px'
 			overflowY='auto'
 			maxW='650px'
 			divider={<Divider borderColor='secondary.100' />}
 		>
 			{isFetching ? (
-				<Center h='100%' w='100%'>
+				<Center flex={1} h='100%' w='100%' pb='70px'>
 					<Spinner color='foreground' size='xl' />
 				</Center>
 			) : (
