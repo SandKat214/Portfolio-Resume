@@ -10,7 +10,6 @@ import {
 	Spinner,
 	Text,
 	UnorderedList,
-	useToast,
 	VStack,
 } from "@chakra-ui/react"
 import { useOutletContext, useParams } from "react-router-dom"
@@ -25,34 +24,25 @@ import { LinkIcon } from "@chakra-ui/icons"
 // Components
 import ExternalLink from "../../components/custom-links/ExternalLink"
 
+// Fallback image
+import fallbackImage from "./images/fallback_image.png"
+
 const ProjectDetails = () => {
 	const { projKey } = useParams()
 	const { setHeading } = useOutletContext()
-	const toast = useToast()
-
 	const [project, setProject] = useState({})
 
 	// Fetch project from db
 	const { isFetching } = useQuery({
 		queryKey: ["project", projKey],
 		queryFn: async () => {
-			try {
-				const res = await axios.get(
-					`${import.meta.env.VITE_API}projects/${projKey}`
-				)
-				setProject(res.data)
-				return res.data
-			} catch (error) {
-				console.log(error)
-				toast({
-					description:
-						error.response.data.error ||
-						"Could not retrieve project from server.",
-					status: "error",
-				})
-				return error
-			}
+			const res = await axios.get(
+				`${import.meta.env.VITE_API}projects/${projKey}`
+			)
+			setProject(res.data)
+			return res.data
 		},
+		retry: 1,
 	})
 
 	useEffect(() => {
@@ -156,6 +146,7 @@ const ProjectDetails = () => {
 					>
 						<Image
 							src={project.image}
+							fallbackSrc={fallbackImage}
 							alt={`${project.title} image.\nCloudinary blocked or inaccessible.`}
 							maxH='100%'
 							maxW='100%'

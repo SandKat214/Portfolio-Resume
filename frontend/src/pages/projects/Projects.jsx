@@ -25,6 +25,9 @@ import { useEffect } from "react"
 import { ViewIcon } from "@chakra-ui/icons"
 import { GrTechnology } from "react-icons/gr"
 
+// Fallback image
+import fallbackImage from "./images/fallback_image.png"
+
 const Projects = () => {
 	const { projects, setHeading, setIsIndex } = useOutletContext()
 
@@ -35,6 +38,7 @@ const Projects = () => {
 					<Image
 						src={projects[route].image}
 						alt={`${projects[route].title} image`}
+						fallbackSrc={fallbackImage}
 						h='50px'
 						w='100%'
 						objectFit='cover'
