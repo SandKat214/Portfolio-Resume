@@ -14,6 +14,6 @@ router.get("/", getProjects)
 router.get("/:name", getProject)
 
 // POST a new project
-router.post("/", createProject)
+// router.post("/", createProject)
 
 module.exports = router

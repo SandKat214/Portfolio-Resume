@@ -10,6 +10,6 @@ const router = express.Router()
 router.get("/", getEducation)
 
 // POST a new project
-router.post("/", createEducation)
+// router.post("/", createEducation)
 
 module.exports = router
