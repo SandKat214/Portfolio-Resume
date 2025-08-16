@@ -26,7 +26,7 @@ import { ViewIcon } from "@chakra-ui/icons"
 import { GrTechnology } from "react-icons/gr"
 
 // Fallback image
-import fallbackImage from "./images/fallback_image.png"
+import fallbackImage from "./images/fallback_image.jpeg"
 
 const Projects = () => {
 	const { projects, setHeading, setIsIndex } = useOutletContext()
