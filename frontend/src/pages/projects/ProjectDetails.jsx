@@ -25,7 +25,7 @@ import { LinkIcon } from "@chakra-ui/icons"
 import ExternalLink from "../../components/custom-links/ExternalLink"
 
 // Fallback image
-import fallbackImage from "./images/fallback_image.png"
+import fallbackImage from "./images/fallback_image.jpeg"
 
 const ProjectDetails = () => {
 	const { projKey } = useParams()
